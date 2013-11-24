@@ -1,0 +1,34 @@
+set agent Agente1 2 // Entro en la sesion del agente
+connect // Conecto con el agente
+set capture cap1
+A module inspector
+A set delta
+A start
+A stop
+end capture
+disconnect // Desconecto del agente
+exit // Salgo de la sesion del agente
+exit // Salgo de la sesion del dispatcher
+
+
+get agents
+0 Agente1
+set agent Agente1 2
+0 Established
+get captures
+0 cap1,cap2,,
+exit
+0 Agent session finished
+get agents
+0 Agente1
+exit
+0 Done
+
+set agent Agente1 2 // Entro en la sesion del agente
+exists capture cap1
+exit
+exit
+
+
+
+

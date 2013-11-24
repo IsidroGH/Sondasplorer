@@ -1,0 +1,21 @@
+WebProbe
+-----------
+
+	Int (4) 		ThreadId
+	Byte(1) 	Metric type
+		Metric type 0 = WebTrace
+			Short(2)		String length
+			Bytes(n)		Web text
+		Metric type 1 = MethodTrace
+			Long(8)		Timestamp
+			Byte(1)		Data type
+				Data type  1 = Start
+					Byte(1)		Cached
+						Cached 0 = New method
+							Short(2)		String length
+							Bytes (n)		Method text
+							Int(4)			Cached Method Id
+						Cached 1 = Cached method
+							Int(4)			Cached Method Id
+				Data type 2 = End
+				Data type 3 = Exception

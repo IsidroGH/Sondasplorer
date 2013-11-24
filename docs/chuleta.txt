@@ -1,0 +1,44 @@
+DEPRECATED
+
+C:\Proyectos\asm\Sondasplorer>
+java -Xbootclasspath/p:D:\instru_java;D:\Sondasplorer_ws\Sondasplorer\bin\sondas.jar;D:\Sondasplorer_ws\Sondasplorer\lib\asm-all-3.1.jar -Dsondasplorer.cfg=D:\Sondasplorer_ws\Sondasplorer\src\sondas\cfg\sondasplorer.cfg test.draft.Clase1
+
+***
+
+* He puesto varios System.setProperty("inspector.cfg" para definir propiedades en metodos main
+
+
+* Si starttrace = aprox 20 bytes y endtrace 6 bytes => aprox por peticion son 30 bytes
+
+suponiendo 50 req/seg => 1500 bytes/seg (1500 usuarios)
+suponiendo 100 componentes => 150.000 bytes/seg
+	9 megas/minuto
+	540 megas/hora
+
+suponiendo 25 req/seg y 50 componentes (750 usuarios)
+	2,25 megas/minuto
+	135 megas/hora
+
+	
+********************
+	Para deserializar un GlobalStats, como es polimorfico hay que hacerlo así:
+	int metricType= dis.readShort();
+	IDeltaNodeFactory factory = InspectorRuntime.getDeltaNodeFactory(metricType);
+	factory.createGlobalStats
+	
+	Internamente, se crearé el objeto adecuado.
+	
+	Esa es la razon por la que el marshall, envia en primer lugar el tipo de metrica (dos.writeShort) y el unmarshall no la lee (en GlobalStats)
+*********************
+
+
+********************** CREAR JAR ***************
+D:\proyectos_ws\Sondasplorer/bin> 
+jar cvfm ../generated_libs/sondasagent.jar ../cfg/sondasmanifest.mf sondas/rt
+jar cvf ../generated_libs/sondasplorer.jar sondas
+************************************************
+D:\proyectos_ws\Sondasplorer\bin>
+java -Xbootclasspath/p:D:\proyectos_ws\Sondasplorer\generated_libs\sondasplorer.jar;D:\proyectos_ws\lib\asm-all-3.1.jar -javaagent:D:\proyectos_ws\Sondasplorer\generated_libs\sondasagent.jar -Dsondasplorer.cfg=D:\proyectos_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\proyectos_ws\Sondasplorer\cfg\inspector.cfg test.draft.Test1
+
+********************** Carga **********************
+	

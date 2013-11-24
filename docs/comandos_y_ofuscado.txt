@@ -1,0 +1,65 @@
+1- Crear JARs
+
+	1.1 Sondasplorer
+		D:\sondasplorer_ws\Sondasplorer\bin
+		jar cvf D:/sondasplorer_ws/lib/sondasplorer-0.1.jar -C D:/sondasplorer_ws/Sondasplorer/bin sondas -C D:/sondasplorer_ws/lib/asm-all-3.1_dir org
+	
+	1.2 Agent
+		jar cvfm D:/sondasplorer_ws/lib/sondasagent-0.1.jar D:/sondasplorer_ws/cfg/agentmanifest.mf -C D:/sondasplorer_ws/Sondasplorer/bin sondas/rt
+		
+	1.3 Inspector Client 
+		jar cvfm D:/sondasplorer_ws/lib/inspector-client-0.1.jar D:/sondasplorer_ws/cfg/inspectorclientmanifest.mf -C D:/sondasplorer_ws/InspectorClient/bin sondas icon.png
+
+
+2- Ejecutar desde linea de comando
+
+	2.1 Test
+		D:\sondasplorer_ws\Test\bin
+		java -classpath D:\sondasplorer_ws\lib\sondasplorer-0.1.jar;. -javaagent:D:\sondasplorer_ws\lib\sondasagent-0.1.jar -Dagent.cfg=D:\sondasplorer_ws\cfg\agent.cfg -Dinspector.cfg=D:\sondasplorer_ws\cfg\inspector.cfg test.draft.Test2
+		
+	2.2 Dispatcher
+	
+		java -classpath D:\sondasplorer_ws\lib\sondasplorer-0.1.jar;. -Dinspector.cfg=D:\sondasplorer_ws\cfg\inspector.cfg -Dsondas.dispatcher.cfg=D:\sondasplorer_ws\cfg\dispatcher.cfg sondas.dispatcher.Dispatcher			
+	
+	2.3 Inspector Client
+	
+		java -Dinspector.cfg=D:\sondasplorer_ws\cfg\inspector.cfg -jar D:\sondasplorer_ws\lib\inspector-client-0.1.jar
+
+
+
+
+***** OLD ******
+
+java -Xbootclasspath/p:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer.jar;D:\sondasplorer_ws\lib\asm-all-3.1.jar -javaagent:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasagent.jar -classpath D:\sondasplorer_ws\lib\servlet-api.jar;. -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg test.draft.Test1
+
+
+java -classpath D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer.jar;D:\sondasplorer_ws\lib\asm-all-3.1.jar;D:\sondasplorer_ws\lib\servlet-api.jar;. -javaagent:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasagent.jar -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg test.draft.Test1
+
+
+jar cvf ../../generated_libs/sondasplorer.jar sondas
+
+Tomcat:
+
+-classpath D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer.jar;D:\sondasplorer_ws\lib\asm-all-3.1.jar;D:\sondasplorer_ws\lib\servlet-api.jar
+-javaagent:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasagent.jar 
+-Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg
+
+_________
+Ofuscado
+_________
+
+Demo:
+
+java -classpath D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer_demo.jar;D:\sondasplorer_ws\lib\asm-all-3.1.jar;. -javaagent:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasagent.jar -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg test.draft.Test1
+
+Dispatcher
+java -classpath D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer_demo.jar;. -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg sondas.dispatcher.Dispatcher
+
+Cliente
+
+java -classpath D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer_demo.jar;D:\sondasplorer_ws\Sondasplorer\generated_libs\client_demo.jar;D:\sondasplorer_ws\lib\jfreechart-1.0.13.jar;D:\sondasplorer_ws\lib\jcommon-1.0.16.jar;D:\sondasplorer_ws\lib\jide-oss-2.9.3.jar;D:\sondasplorer_ws\InspectorClient\lib\AbsoluteLayout.jar;D:\sondasplorer_ws\InspectorClient\lib\swing-layout-1.0.3.jar;D:\sondasplorer_ws\lib\jgraphx.jar;. -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg sondas.client.inspector.InspectorClient
+
+
+test
+
+java -classpath .;D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasplorer_demo.jar;D:\sondasplorer_ws\lib\asm-all-3.1.jar -javaagent:D:\sondasplorer_ws\Sondasplorer\generated_libs\sondasagent.jar -Dsondasplorer.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\sondasplorer.cfg -Dinspector.cfg=D:\sondasplorer_ws\Sondasplorer\cfg\inspector.cfg sondas.inspector.test.InspectorTest

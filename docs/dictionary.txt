@@ -1,0 +1,1799 @@
+sondas.BaseExecutionData -> sondas.BaseExecutionData:
+    int id -> a
+    int getId() -> a
+sondas.BaseMessagesProcessorModule -> sondas.BaseMessagesProcessorModule:
+    void execute(java.lang.String,java.io.Writer) -> a
+    java.lang.String getName() -> a
+    void abort() -> b
+sondas.BaseProbe -> sondas.BaseProbe:
+    boolean traceInternalMethods -> b
+    boolean traceParams -> c
+    boolean traceResponse -> d
+    java.util.HashSet methodsToInstrumentalize -> e
+    boolean selectiveInstrumentalization -> f
+    java.util.List customParams -> g
+    java.lang.ThreadLocal threadStore -> h
+    java.lang.ThreadLocal currentThread -> a
+    void setCustomParam(int,java.lang.String,java.lang.String,boolean,java.lang.String) -> a
+    void setThreadObject(java.lang.Object,java.lang.Object) -> a
+    void removeThreadObject(java.lang.Object) -> a
+    java.lang.Object getThreadObject(java.lang.Object) -> b
+    java.util.Map getThreadStore() -> a
+    boolean traceInternalMethods() -> traceInternalMethods
+    boolean traceParams() -> traceParams
+    boolean traceResponse() -> traceResponse
+    void setMethodToInstrumentalize(java.lang.String,java.lang.String) -> a
+    void setMethodToInstrumentalize(java.lang.String) -> a
+    boolean hasToInstrumentalize(java.lang.String,java.lang.String) -> hasToInstrumentalize
+    java.util.List getCustomParams() -> getCustomParams
+    boolean useCustomParams() -> useCustomParams
+    void leaveMethod(java.lang.Object) -> leaveMethod
+    void resumeMethod(java.lang.Object) -> resumeMethod
+sondas.BaseProbe$1 -> sondas.a:
+    java.lang.Object initialValue() -> initialValue
+sondas.BaseProbe$2 -> sondas.b:
+    java.lang.Object initialValue() -> initialValue
+sondas.ClassInstrumentalizer -> sondas.ClassInstrumentalizer:
+    org.objectweb.asm.ClassWriter cw -> a
+    java.lang.String generatedClass -> b
+    java.lang.String className -> c
+    java.lang.String classSignature -> d
+    java.lang.String superClassName -> e
+    boolean fileOut -> f
+    byte[] out -> g
+    org.objectweb.asm.MethodVisitor visitMethod(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[]) -> visitMethod
+    byte[] getInstrumentalizedClass() -> a
+    void visit(int,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String[]) -> visit
+    org.objectweb.asm.AnnotationVisitor visitAnnotation(java.lang.String,boolean) -> visitAnnotation
+    void visitAttribute(org.objectweb.asm.Attribute) -> visitAttribute
+    void visitEnd() -> visitEnd
+    org.objectweb.asm.FieldVisitor visitField(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object) -> visitField
+    void visitInnerClass(java.lang.String,java.lang.String,java.lang.String,int) -> visitInnerClass
+    void visitOuterClass(java.lang.String,java.lang.String,java.lang.String) -> visitOuterClass
+    void visitSource(java.lang.String,java.lang.String) -> visitSource
+sondas.Config -> sondas.Config:
+    java.util.HashMap cfgCats -> a
+    void loadConfiguration(java.lang.String) -> b
+    sondas.utils.MultipleRelation getCategory(java.lang.String) -> a
+    java.lang.String getProperty(java.lang.String,java.lang.String) -> a
+    java.lang.String getNullableProperty(java.lang.String,java.lang.String) -> b
+    boolean hasProperty(java.lang.String,java.lang.String) -> c
+    java.util.List getMultipleProperty(java.lang.String,java.lang.String) -> d
+    int getPropertyAsInteger(java.lang.String,java.lang.String) -> e
+    int getPropertyAsInteger(java.lang.String,java.lang.String,int) -> a
+    boolean getPropertyAsBoolean(java.lang.String,java.lang.String) -> f
+sondas.ConversationException -> sondas.ConversationException:
+sondas.ConversationManager -> sondas.ConversationManager:
+    int Ok -> a
+    int Error -> b
+    int Ignored -> c
+    sondas.dispatcher.RespBean sendCommand(java.io.BufferedReader,java.io.Writer,java.lang.String) -> a
+    sondas.dispatcher.RespBean sendPartialCommand(java.io.BufferedReader,java.io.Writer,java.lang.String) -> b
+    void sendResponse(int,java.io.Writer,java.lang.String) -> a
+    java.lang.String readln(java.io.BufferedReader) -> a
+    void write(java.io.Writer,java.lang.String) -> a
+sondas.CurrentThread -> sondas.CurrentThread:
+    int threadSeqNumber -> b
+    int tid -> a
+    int nextThreadId() -> a
+sondas.CustomParam -> sondas.CustomParam:
+    int INVOKEVIRTUAL -> a
+    int INVOKEINTERFACE -> b
+    int paramPos -> c
+    java.lang.String method -> d
+    java.lang.String className -> e
+    boolean isInterface -> f
+    java.lang.String returnType -> g
+sondas.ExecutionMap -> sondas.ExecutionMap:
+    int exIdSeq -> a
+    int getNextExId() -> a
+sondas.Global -> sondas.Global:
+    int registeredNodes -> c
+    boolean[] enabledNodes -> a
+    java.util.HashMap nodesNamesIdRel -> b
+    sondas.Config config -> d
+    boolean isConfigLoaded() -> a
+    void loadConfiguration(java.lang.String) -> a
+    int getPropertyAsInteger(java.lang.String,java.lang.String) -> a
+    boolean getPropertyAsBoolean(java.lang.String,java.lang.String) -> b
+    java.lang.String getProperty(java.lang.String,java.lang.String) -> c
+    int registerNode(java.lang.String) -> b
+    java.util.Map getNodesIds() -> b
+    int getNodeId(java.lang.String) -> c
+    void enableNode(int) -> a
+    void disableNode(int) -> b
+    void finishNodeRegistration() -> c
+sondas.IExecutionData -> sondas.IExecutionData:
+    int getId() -> a
+sondas.IProbe -> sondas.IProbe:
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void leaveMethod(java.lang.Object) -> leaveMethod
+    void resumeMethod(java.lang.Object) -> resumeMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    boolean traceInternalMethods() -> traceInternalMethods
+    boolean traceParams() -> traceParams
+    boolean traceResponse() -> traceResponse
+    boolean hasToInstrumentalize(java.lang.String,java.lang.String) -> hasToInstrumentalize
+    void init() -> init
+    java.util.List getCustomParams() -> getCustomParams
+    boolean useCustomParams() -> useCustomParams
+sondas.MPCommon -> sondas.MPCommon:
+    java.util.ArrayList signaledBuffers -> a
+    java.lang.String getName() -> a
+    void registerSignaledBuffer(sondas.utils.SignaledBuffer) -> a
+    void execute(java.lang.String,java.io.Writer) -> a
+    void abort() -> b
+sondas.MPInspector -> sondas.MPInspector:
+    java.lang.String getName() -> a
+    void execute(java.lang.String,java.io.Writer) -> a
+    void abort() -> b
+sondas.MatchingRule -> sondas.MatchingRule:
+    java.lang.String regexPattern -> a
+    java.lang.String clazz -> b
+    java.util.Set methods -> c
+    java.lang.String sign -> d
+    java.util.Set signs -> e
+    void loadMethods(java.lang.String) -> a
+    void loadSigns(java.lang.String) -> b
+sondas.MessagesProcessor -> sondas.MessagesProcessor:
+    java.net.ServerSocket serverSocket -> a
+    java.net.Socket clientSocket -> b
+    int port -> c
+    java.io.BufferedReader in -> d
+    java.io.BufferedWriter out -> e
+    java.util.HashMap modules -> f
+    void configureModules() -> b
+    sondas.BaseMessagesProcessorModule getModule(java.lang.String) -> a
+    sondas.BaseMessagesProcessorModule getBaseModule() -> a
+    void run() -> run
+sondas.MethodInstrumentalizer -> sondas.MethodInstrumentalizer:
+    java.lang.String methodName -> b
+    java.lang.String className -> c
+    boolean isCtor -> d
+    boolean superCalled -> e
+    java.lang.String methodSignature -> f
+    int originalFirstVbleId -> g
+    int paramsCount -> h
+    int firstParamId -> i
+    int endParamId -> j
+    boolean traceResponse -> k
+    char respChar -> l
+    sondas.inspector.InspectorRuntime runtime -> m
+    int[] exIdsVbles -> n
+    int[] probesVblesIds -> o
+    byte[] paramTypes -> p
+    int newVblesCount -> q
+    java.lang.String fqName -> r
+    org.objectweb.asm.MethodVisitor mv -> s
+    org.objectweb.asm.Label l0 -> t
+    org.objectweb.asm.Label l1 -> u
+    int access -> v
+    int respVbleId -> w
+    java.util.List probesNodesAndIndexes -> x
+    boolean tryInserted -> y
+    int id -> a
+    void insertTryFinallyIfFirstIns() -> b
+    void visitMethodInsn(int,java.lang.String,java.lang.String,java.lang.String) -> visitMethodInsn
+    int newVble() -> c
+    void visitCode() -> visitCode
+    void visitInsn(int) -> visitInsn
+    void visitMaxs(int,int) -> visitMaxs
+    int parseSignature(java.lang.String) -> a
+    boolean isStatic() -> a
+    void visitVarInsn(int,int) -> visitVarInsn
+    void visitIincInsn(int,int) -> visitIincInsn
+    org.objectweb.asm.AnnotationVisitor visitAnnotation(java.lang.String,boolean) -> visitAnnotation
+    org.objectweb.asm.AnnotationVisitor visitParameterAnnotation(int,java.lang.String,boolean) -> visitParameterAnnotation
+    org.objectweb.asm.AnnotationVisitor visitAnnotationDefault() -> visitAnnotationDefault
+    void visitAttribute(org.objectweb.asm.Attribute) -> visitAttribute
+    void visitEnd() -> visitEnd
+    void visitFieldInsn(int,java.lang.String,java.lang.String,java.lang.String) -> visitFieldInsn
+    void visitFrame(int,int,java.lang.Object[],int,java.lang.Object[]) -> visitFrame
+    void visitIntInsn(int,int) -> visitIntInsn
+    void visitJumpInsn(int,org.objectweb.asm.Label) -> visitJumpInsn
+    void visitLabel(org.objectweb.asm.Label) -> visitLabel
+    void visitLdcInsn(java.lang.Object) -> visitLdcInsn
+    void visitLineNumber(int,org.objectweb.asm.Label) -> visitLineNumber
+    void visitLocalVariable(java.lang.String,java.lang.String,java.lang.String,org.objectweb.asm.Label,org.objectweb.asm.Label,int) -> visitLocalVariable
+    void visitLookupSwitchInsn(org.objectweb.asm.Label,int[],org.objectweb.asm.Label[]) -> visitLookupSwitchInsn
+    void visitMultiANewArrayInsn(java.lang.String,int) -> visitMultiANewArrayInsn
+    void visitTableSwitchInsn(int,int,org.objectweb.asm.Label,org.objectweb.asm.Label[]) -> visitTableSwitchInsn
+    void visitTryCatchBlock(org.objectweb.asm.Label,org.objectweb.asm.Label,org.objectweb.asm.Label,java.lang.String) -> visitTryCatchBlock
+    void visitTypeInsn(int,java.lang.String) -> visitTypeInsn
+sondas.NodeIndexBean -> sondas.NodeIndexBean:
+    int index -> a
+    int nodeId -> b
+    sondas.IProbe probe -> c
+sondas.NodeProbeBean -> sondas.c:
+    java.lang.String probeName -> a
+    java.lang.String node -> b
+    sondas.IProbe probe -> c
+    int nodeId -> d
+sondas.SondasLoader -> sondas.SondasLoader:
+    sondas.SondasLoader instance -> a
+    int registeredProbes -> b
+    sondas.utils.MultipleRelation regexNodeProbesRel -> c
+    sondas.utils.MultipleRelation inheritedNodeProbesRel -> d
+    java.util.HashMap probeIndexRel -> e
+    java.util.HashMap probeClassNameProbeRel -> f
+    java.util.Set registeredProbesNames -> g
+    java.util.HashMap replacedClasses -> h
+    void startup() -> a
+    sondas.SondasLoader getInstance() -> b
+    int getNewId() -> c
+    void loadCfg() -> d
+    void parseLine(java.lang.String) -> a
+    sondas.IProbe registerProbe(java.lang.String) -> b
+    byte[] load(java.lang.String,byte[]) -> a
+    java.util.List getMethodProbesIndexes(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    sondas.IProbe getProbe(int) -> getProbe
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.ClientException -> sondas.client.inspector.ClientException:
+sondas.client.inspector.ClientInspectorRuntime -> sondas.client.inspector.ClientInspectorRuntime:
+    sondas.client.inspector.ClientInspectorRuntime instance -> c
+    java.util.HashMap nodeViewers -> d
+    sondas.client.inspector.ClientInspectorRuntime getInstance() -> a
+    void loadNodeViewers() -> l
+    sondas.client.inspector.view.nodes.IProbeViewer getNodeViewer(int) -> a
+    sondas.inspector.InspectorRuntime getInstance() -> b
+sondas.client.inspector.InspectorClient -> sondas.client.inspector.InspectorClient:
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.Preferences -> sondas.client.inspector.Preferences:
+    int RecursivityLevel -> a
+    java.lang.String tmpPath -> b
+    java.lang.String cacheDataFile -> c
+    java.lang.String cacheIndexFile -> d
+sondas.client.inspector.forms.AboutDlg -> sondas.client.inspector.forms.AboutDlg:
+    javax.swing.JButton jButton1 -> a
+    javax.swing.JLabel jLabel1 -> b
+    javax.swing.JLabel jLabel2 -> c
+    javax.swing.JLabel jLabel3 -> d
+    void initComponents() -> a
+    void jButton1ActionPerformed(java.awt.event.ActionEvent) -> a
+    void main(java.lang.String[]) -> main
+    void access$0(sondas.client.inspector.forms.AboutDlg,java.awt.event.ActionEvent) -> a
+sondas.client.inspector.forms.AboutDlg$1 -> sondas.client.inspector.forms.a:
+    sondas.client.inspector.forms.AboutDlg this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.AboutDlg$2 -> sondas.client.inspector.forms.b:
+    void run() -> run
+sondas.client.inspector.forms.AboutDlg$2$1 -> sondas.client.inspector.forms.c:
+    sondas.client.inspector.forms.AboutDlg$2 this$1 -> a
+    void windowClosing(java.awt.event.WindowEvent) -> windowClosing
+sondas.client.inspector.forms.AgentSessionForm -> sondas.client.inspector.forms.AgentSessionForm:
+    java.util.List agents -> a
+    java.lang.String agent -> b
+    javax.swing.JButton bCancel -> c
+    javax.swing.JButton bOk -> d
+    javax.swing.JLabel jLabel1 -> e
+    javax.swing.JLabel jLabel2 -> f
+    javax.swing.JList jList1 -> g
+    javax.swing.JScrollPane jScrollPane1 -> h
+    java.lang.String getAgent() -> a
+    void setAgents(java.util.List) -> a
+    void initComponents() -> b
+    void bCancelActionPerformed(java.awt.event.ActionEvent) -> a
+    void bOkActionPerformed(java.awt.event.ActionEvent) -> b
+    java.util.List access$0(sondas.client.inspector.forms.AgentSessionForm) -> a
+    void access$1(sondas.client.inspector.forms.AgentSessionForm,java.awt.event.ActionEvent) -> a
+    void access$2(sondas.client.inspector.forms.AgentSessionForm,java.awt.event.ActionEvent) -> b
+sondas.client.inspector.forms.AgentSessionForm$1 -> sondas.client.inspector.forms.d:
+    sondas.client.inspector.forms.AgentSessionForm this$0 -> a
+    int getSize() -> getSize
+    java.lang.Object getElementAt(int) -> getElementAt
+sondas.client.inspector.forms.AgentSessionForm$2 -> sondas.client.inspector.forms.e:
+    sondas.client.inspector.forms.AgentSessionForm this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.AgentSessionForm$3 -> sondas.client.inspector.forms.f:
+    sondas.client.inspector.forms.AgentSessionForm this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.CapturesForm -> sondas.client.inspector.forms.CapturesForm:
+    java.util.List captures -> a
+    sondas.inspector.connectivity.DispatcherManager dm -> b
+    java.lang.String capture -> c
+    javax.swing.JButton bCancel -> d
+    javax.swing.JButton bOk -> e
+    javax.swing.JLabel jLabel1 -> f
+    javax.swing.JLabel jLabel2 -> g
+    javax.swing.JList jList1 -> h
+    javax.swing.JScrollPane jScrollPane1 -> i
+    void initComponents() -> b
+    void bCancelActionPerformed(java.awt.event.ActionEvent) -> a
+    void bOkActionPerformed(java.awt.event.ActionEvent) -> b
+    java.lang.String getCapture() -> a
+    void setCaptures() -> c
+    void access$0(sondas.client.inspector.forms.CapturesForm,java.awt.event.ActionEvent) -> a
+    void access$1(sondas.client.inspector.forms.CapturesForm,java.awt.event.ActionEvent) -> b
+    java.util.List access$2(sondas.client.inspector.forms.CapturesForm) -> a
+sondas.client.inspector.forms.CapturesForm$1 -> sondas.client.inspector.forms.g:
+    sondas.client.inspector.forms.CapturesForm this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.CapturesForm$2 -> sondas.client.inspector.forms.h:
+    sondas.client.inspector.forms.CapturesForm this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.CapturesForm$3 -> sondas.client.inspector.forms.i:
+    sondas.client.inspector.forms.CapturesForm this$0 -> a
+    int getSize() -> getSize
+    java.lang.Object getElementAt(int) -> getElementAt
+sondas.client.inspector.forms.CommonForms -> sondas.client.inspector.forms.CommonForms:
+    void showMessage(java.awt.Component,java.lang.String,java.lang.String,int) -> a
+    void showError(java.awt.Component,java.lang.String,java.lang.Throwable) -> a
+    void showError(java.awt.Component,java.lang.Throwable) -> a
+    void showError(java.awt.Component,java.lang.String) -> a
+sondas.client.inspector.forms.NewCapture -> sondas.client.inspector.forms.NewCapture:
+    sondas.inspector.connectivity.DispatcherManager dm -> a
+    boolean started -> b
+    sondas.client.inspector.view.MainFrame mainFrame -> c
+    javax.swing.JButton bExit -> d
+    javax.swing.JButton bStart -> e
+    javax.swing.JButton bStop -> f
+    javax.swing.JTextField captureName -> g
+    javax.swing.JLabel jLabel1 -> h
+    javax.swing.JLabel jLabel2 -> i
+    javax.swing.JLabel jLabel3 -> j
+    javax.swing.JProgressBar progressBar -> k
+    javax.swing.JTextField timeSlice -> l
+    void initComponents() -> a
+    void bExitActionPerformed(java.awt.event.ActionEvent) -> a
+    void bStopActionPerformed(java.awt.event.ActionEvent) -> b
+    void bStartActionPerformed(java.awt.event.ActionEvent) -> c
+    boolean access$0(sondas.client.inspector.forms.NewCapture) -> a
+    sondas.inspector.connectivity.DispatcherManager access$1(sondas.client.inspector.forms.NewCapture) -> b
+    void access$2(sondas.client.inspector.forms.NewCapture,java.awt.event.ActionEvent) -> a
+    void access$3(sondas.client.inspector.forms.NewCapture,java.awt.event.ActionEvent) -> b
+    void access$4(sondas.client.inspector.forms.NewCapture,java.awt.event.ActionEvent) -> c
+sondas.client.inspector.forms.NewCapture$1 -> sondas.client.inspector.forms.j:
+    sondas.client.inspector.forms.NewCapture this$0 -> a
+    void windowClosing(java.awt.event.WindowEvent) -> windowClosing
+sondas.client.inspector.forms.NewCapture$2 -> sondas.client.inspector.forms.k:
+    sondas.client.inspector.forms.NewCapture this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.NewCapture$3 -> sondas.client.inspector.forms.l:
+    sondas.client.inspector.forms.NewCapture this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.forms.NewCapture$4 -> sondas.client.inspector.forms.m:
+    sondas.client.inspector.forms.NewCapture this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.math.DataSet -> sondas.client.inspector.math.DataSet:
+    long[] x -> a
+    float[] y -> b
+sondas.client.inspector.math.Interpolator -> sondas.client.inspector.math.Interpolator:
+    sondas.client.inspector.math.DataSet process(long[],float[],int,boolean) -> a
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.math.Spline -> sondas.client.inspector.math.Spline:
+    int n -> a
+    int last_interval -> b
+    double[] x -> c
+    double[] f -> d
+    double[] b -> e
+    double[] c -> f
+    double[] d -> g
+    boolean uniform -> h
+    boolean debug -> i
+    double spline_value(double) -> a
+    double integrate() -> a
+    void dHeapSort(double[],double[]) -> a
+    void dremake_heap(double[],double[],int,int) -> a
+    void test2() -> b
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.model.ClientDeltaComposer -> sondas.client.inspector.model.ClientDeltaComposer:
+    void unmarshallGlobalStatsMap(java.io.DataInputStream,sondas.inspector.StringsCache,java.util.Map) -> a
+    void unmarshallTimedGlobalStatsMaps(java.io.DataInputStream,sondas.inspector.StringsCache,java.util.Map) -> b
+    void unmarshallStatsTreeDataMap(java.io.DataInputStream,sondas.inspector.StringsCache,java.util.Map) -> c
+    sondas.inspector.delta.DeltaTree doProcessLicensed(java.io.DataInputStream,long,long,java.util.Map,java.util.Map,java.lang.String) -> a
+sondas.client.inspector.model.Model -> sondas.client.inspector.model.Model:
+    java.text.DecimalFormat dec -> b
+    int fullProbePid -> c
+    int deltaProbePid -> d
+    sondas.inspector.delta.DeltaTree resultTree -> e
+    java.util.HashMap threadsDeltaTrees -> f
+    sondas.inspector.StringsCache stringsCache -> g
+    sondas.inspector.StringsCache cachedStringsCache -> h
+    long iniTs -> i
+    long endTs -> j
+    java.util.Map timedGlobalMaps -> k
+    java.util.Map catDict -> l
+    java.util.Map catDictInv -> m
+    java.util.Map methodNames -> n
+    java.lang.String licensesServer -> o
+    java.util.HashSet entryPointMethods -> p
+    long minTs -> q
+    long maxTs -> r
+    java.io.DataOutputStream dataCachedTree -> s
+    java.io.DataOutputStream indexCachedTree -> t
+    long lastCurrentTs -> u
+    java.lang.String cacheFile -> v
+    java.lang.String indexFile -> w
+    boolean isDataCached -> a
+    java.util.Map statsTreeDataMap -> x
+    java.util.Map subTreesMap -> y
+    java.util.Map getMethodNames() -> a
+    void loadCache(java.io.DataInputStream) -> a
+    void prepareCache() -> h
+    long getMinTs() -> b
+    long getMaxTs() -> c
+    sondas.inspector.delta.DeltaTree doProcessLicensed(java.io.DataInputStream,long,long) -> a
+    sondas.client.inspector.model.StatsTreeData[] getStatsTreeDatas() -> d
+    java.util.Map getCategoriesDictionary() -> e
+    java.util.Map getTimedGlobals() -> f
+    java.util.Map getGlobalStats() -> g
+    boolean fullModeProcess(java.io.DataInputStream) -> b
+    boolean deltaModeProcess(java.io.DataInputStream) -> c
+    java.util.Map getDiferential(java.util.Map,java.util.Map) -> a
+    void registerTimedStats(java.util.Map) -> a
+    void mergeGlobals(java.util.Map,java.util.Map) -> b
+    void readHeader(java.io.DataInputStream) -> d
+    sondas.inspector.delta.DeltaTree doProcess(java.io.DataInputStream) -> e
+    sondas.inspector.ITrace unmarshallTrace(int,java.io.DataInputStream) -> a
+    java.util.Set getSubtrees(int) -> a
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.model.StatsTreeData -> sondas.client.inspector.model.StatsTreeData:
+    int metricType -> a
+    java.util.List statsNames -> b
+    java.util.List statsTitles -> c
+    java.util.List statsUnits -> d
+    java.util.List statsFormats -> e
+    java.util.List isAccList -> f
+    java.util.List categories -> g
+    java.lang.String name -> h
+    int id -> i
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    int getMetricType() -> a
+    java.lang.String getName() -> b
+    int getMetricKey() -> c
+    int getCategoriesCount() -> d
+    java.util.List getStatNames() -> e
+    java.util.List getStatTitles() -> f
+    java.util.List getStatUnits() -> g
+    java.util.List getStatFormats() -> h
+    java.util.List getIsAccList() -> i
+    java.util.List getCategories() -> j
+    int getStatsCount() -> k
+    void registerStat(java.lang.String,java.lang.String,java.lang.String) -> a
+    void registerStat(java.lang.String,java.lang.String,java.lang.String,boolean) -> a
+    void registerStat(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean) -> a
+    void registerNode(int) -> a
+    boolean hasNode(int) -> b
+sondas.client.inspector.view.BevelArrowIcon -> sondas.client.inspector.view.a:
+    int UP -> a
+    int DOWN -> b
+    int DEFAULT_SIZE -> c
+    java.awt.Color edge1 -> d
+    java.awt.Color edge2 -> e
+    java.awt.Color fill -> f
+    int size -> g
+    int direction -> h
+    void paintIcon(java.awt.Component,java.awt.Graphics,int,int) -> paintIcon
+    int getIconWidth() -> getIconWidth
+    int getIconHeight() -> getIconHeight
+    void init(java.awt.Color,java.awt.Color,java.awt.Color,int,int) -> a
+    void drawDownArrow(java.awt.Graphics,int,int) -> a
+    void drawUpArrow(java.awt.Graphics,int,int) -> b
+sondas.client.inspector.view.BlankIcon -> sondas.client.inspector.view.b:
+    java.awt.Color fillColor -> a
+    int size -> b
+    void paintIcon(java.awt.Component,java.awt.Graphics,int,int) -> paintIcon
+    int getIconWidth() -> getIconWidth
+    int getIconHeight() -> getIconHeight
+sondas.client.inspector.view.IClientEvents -> sondas.client.inspector.view.IClientEvents:
+    void timeRangeChanged() -> a
+sondas.client.inspector.view.MainFrame -> sondas.client.inspector.view.MainFrame:
+    long serialVersionUID -> a
+    sondas.client.inspector.view.MainFrame mainFrame -> b
+    java.lang.String MenuAgentSession -> c
+    java.lang.String MenuLoadModelLoc -> d
+    java.lang.String MenuLoadModelRep -> e
+    java.lang.String MenuNewCapture -> f
+    java.lang.String MenuAbout -> g
+    sondas.client.inspector.view.ResultsTabbedPanel resultsTabbedPanel -> h
+    sondas.client.inspector.view.StatsTree metricsTree -> i
+    sondas.client.inspector.model.Model model -> j
+    javax.swing.JScrollPane treePanelScroll -> k
+    javax.swing.JSplitPane horSplitPane -> l
+    java.util.List agents -> m
+    javax.swing.JLabel status -> n
+    sondas.inspector.connectivity.DispatcherManager dispatcherManager -> o
+    javax.swing.JMenuItem newCaptureMenu -> p
+    javax.swing.JMenuItem loadCaptureMenu -> q
+    javax.swing.JPanel mainPanel -> r
+    java.lang.String disHost -> s
+    int disPort -> t
+    int capPort -> u
+    java.lang.String licensesServer -> v
+    java.lang.String appName -> w
+    sondas.client.inspector.view.TimeRangePanel timeRange -> x
+    boolean ctrlPressed -> y
+    boolean timeRangeChangedWhileCtrlPressed -> z
+    sondas.client.inspector.forms.AboutDlg aboutDlg -> A
+    void timeRangeChanged() -> a
+    void regenView() -> b
+    boolean connectToDispatcher() -> l
+    void start() -> c
+    void loadConfiguration() -> m
+    void exportData(java.lang.String[],java.util.Vector) -> a
+    void writeCsvData(java.io.File,java.lang.String[],java.util.Vector) -> a
+    void loadModelLocAction() -> n
+    void agentSessionAction() -> o
+    void newCapture() -> p
+    void loadModelRepAction() -> q
+    void createMenu() -> r
+    void processError() -> d
+    void regenStatsTree() -> s
+    void loadModel(java.io.InputStream,int) -> a
+    void createGlobalStatsTable(int) -> b
+    sondas.client.inspector.view.MainFrame getInstance() -> e
+    void generateTree(int) -> a
+    void generateMap() -> f
+    void showTimeMetrics(sondas.client.inspector.view.MetricBean,java.lang.String,java.lang.String) -> a
+    void sortBiArray(long[],float[]) -> a
+    java.lang.String access$0(sondas.client.inspector.view.MainFrame) -> a
+    void access$1(sondas.client.inspector.view.MainFrame,sondas.client.inspector.model.Model) -> a
+    sondas.client.inspector.model.Model access$2(sondas.client.inspector.view.MainFrame) -> b
+    javax.swing.JPanel access$3(sondas.client.inspector.view.MainFrame) -> c
+    void access$4(sondas.client.inspector.view.MainFrame,int) -> a
+    void access$5(sondas.client.inspector.view.MainFrame) -> d
+    void access$6(sondas.client.inspector.view.MainFrame) -> e
+    sondas.client.inspector.view.TimeRangePanel access$7(sondas.client.inspector.view.MainFrame) -> f
+    javax.swing.JScrollPane access$8(sondas.client.inspector.view.MainFrame) -> g
+    boolean access$9(sondas.client.inspector.view.MainFrame) -> h
+    void access$10(sondas.client.inspector.view.MainFrame,boolean) -> a
+    void access$11(sondas.client.inspector.view.MainFrame,boolean) -> b
+    boolean access$12(sondas.client.inspector.view.MainFrame) -> i
+    java.lang.String access$13() -> g
+    void access$14(sondas.client.inspector.view.MainFrame) -> j
+    java.lang.String access$15() -> h
+    void access$16(sondas.client.inspector.view.MainFrame) -> k
+    java.lang.String access$17() -> i
+    void access$18(sondas.client.inspector.view.MainFrame) -> l
+    java.lang.String access$19() -> j
+    void access$20(sondas.client.inspector.view.MainFrame) -> m
+    java.lang.String access$21() -> k
+    sondas.client.inspector.forms.AboutDlg access$22(sondas.client.inspector.view.MainFrame) -> n
+sondas.client.inspector.view.MainFrame$1 -> sondas.client.inspector.view.c:
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    void keyPressed(java.awt.event.KeyEvent) -> keyPressed
+    void keyReleased(java.awt.event.KeyEvent) -> keyReleased
+sondas.client.inspector.view.MainFrame$2 -> sondas.client.inspector.view.d:
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    java.lang.String getDescription() -> getDescription
+    boolean accept(java.io.File) -> accept
+sondas.client.inspector.view.MainFrame$3 -> sondas.client.inspector.view.e:
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    java.lang.String getDescription() -> getDescription
+    boolean accept(java.io.File) -> accept
+sondas.client.inspector.view.MainFrame$4 -> sondas.client.inspector.view.f:
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.view.MainFrame$GenerateMapTask -> sondas.client.inspector.view.g:
+    java.lang.String entryPointId -> b
+    javax.swing.JDialog dialog -> c
+    sondas.client.inspector.view.MapPanel mapPanel -> d
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    java.lang.Void doInBackground() -> a
+    void done() -> done
+    java.lang.Object doInBackground() -> doInBackground
+sondas.client.inspector.view.MainFrame$GenerateTreeTask -> sondas.client.inspector.view.h:
+    int entryNodeId -> b
+    javax.swing.JDialog dialog -> c
+    sondas.client.inspector.view.TreePanel treePanel -> d
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    java.lang.Void doInBackground() -> a
+    void done() -> done
+    java.lang.Object doInBackground() -> doInBackground
+sondas.client.inspector.view.MainFrame$LoadModelTask -> sondas.client.inspector.view.i:
+    int recursivityLevel -> b
+    java.awt.Component parent -> c
+    java.io.InputStream is -> d
+    sondas.client.inspector.view.TableData entryPointsTable -> e
+    javax.swing.JDialog dialog -> f
+    boolean isCached -> g
+    long minTs -> h
+    long maxTs -> i
+    long iniTs -> j
+    long endTs -> k
+    boolean ok -> l
+    sondas.client.inspector.view.MainFrame this$0 -> a
+    java.lang.Void doInBackground() -> a
+    void done() -> done
+    java.lang.Object doInBackground() -> doInBackground
+sondas.client.inspector.view.MapPanel -> sondas.client.inspector.view.MapPanel:
+    com.mxgraph.view.mxGraph graph -> a
+    java.awt.Container container -> b
+    java.util.HashMap styles -> c
+    java.util.Map toolTips -> d
+    java.lang.Object graphParent -> e
+    void generateMap(java.util.Collection) -> a
+    void drawElements(java.util.Collection) -> b
+    java.util.List getRemoteElements(java.util.Collection) -> c
+    void drawMap(java.util.Collection) -> d
+sondas.client.inspector.view.MapPanel$1 -> sondas.client.inspector.view.j:
+    sondas.client.inspector.view.MapPanel this$0 -> a
+    com.mxgraph.swing.mxGraphComponent val$graphComponent -> b
+    void mouseWheelMoved(java.awt.event.MouseWheelEvent) -> mouseWheelMoved
+sondas.client.inspector.view.MetricBean -> sondas.client.inspector.view.k:
+    int metricType -> a
+    java.lang.String statName -> b
+    java.lang.String statUnit -> c
+    java.lang.String nodeName -> d
+    int id -> e
+    java.lang.String format -> f
+    boolean isAcc -> g
+sondas.client.inspector.view.Node -> sondas.client.inspector.view.l:
+    java.lang.String name -> a
+    boolean isFinal -> b
+    java.lang.String toString() -> toString
+    int compare(sondas.client.inspector.view.Node) -> a
+sondas.client.inspector.view.RemoteElement -> sondas.client.inspector.view.m:
+    java.lang.String text -> a
+    java.lang.String toolTip -> b
+sondas.client.inspector.view.ResultsTabbedPanel -> sondas.client.inspector.view.ResultsTabbedPanel:
+    javax.swing.JPanel statisticsTab -> a
+    javax.swing.JPanel entryPointsTab -> b
+    java.lang.String[] statisticsColumName -> c
+    java.lang.Class[] statisticsColumType -> d
+    int[] statisticsColumnWidth -> e
+    java.lang.String[] entryPointsColumName -> f
+    java.lang.Class[] entryPointsColumType -> g
+    int[] entryPointsColumnWidth -> h
+    java.util.List statisticsCellData -> i
+    void setStatisticsData(sondas.client.inspector.view.TableData) -> a
+    java.awt.Component createStatisticsPanel(sondas.client.inspector.view.SortableTable) -> a
+    java.util.List access$0(sondas.client.inspector.view.ResultsTabbedPanel) -> a
+sondas.client.inspector.view.ResultsTabbedPanel$1 -> sondas.client.inspector.view.n:
+    sondas.client.inspector.view.ResultsTabbedPanel this$0 -> a
+    sondas.client.inspector.view.SortableTable val$sortableTable -> b
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.view.ResultsTabbedPanel$2 -> sondas.client.inspector.view.o:
+    sondas.client.inspector.view.ResultsTabbedPanel this$0 -> a
+    sondas.client.inspector.view.SortableTable val$sortableTable -> b
+    void actionPerformed(java.awt.event.ActionEvent) -> actionPerformed
+sondas.client.inspector.view.SortButtonRenderer -> sondas.client.inspector.view.p:
+    int NONE -> a
+    int DOWN -> b
+    int UP -> c
+    int pushedColumn -> d
+    java.util.Hashtable state -> e
+    javax.swing.JButton downButton -> f
+    javax.swing.JButton upButton -> g
+    java.awt.Component getTableCellRendererComponent(javax.swing.JTable,java.lang.Object,boolean,boolean,int,int) -> getTableCellRendererComponent
+    void setPressedColumn(int) -> a
+    void setSelectedColumn(int) -> b
+    int getState(int) -> c
+sondas.client.inspector.view.SortableTable -> sondas.client.inspector.view.SortableTable:
+    sondas.client.inspector.view.SortableTableModel dm -> a
+    java.lang.String[] headerStr -> b
+    javax.swing.JTable table -> c
+    java.lang.String[] getHeader() -> a
+    javax.swing.JTable getTable() -> b
+sondas.client.inspector.view.SortableTable$DecimalFormatRenderer -> sondas.client.inspector.view.q:
+    java.text.DecimalFormat formatter -> a
+    java.awt.Component getTableCellRendererComponent(javax.swing.JTable,java.lang.Object,boolean,boolean,int,int) -> getTableCellRendererComponent
+sondas.client.inspector.view.SortableTable$HeaderListener -> sondas.client.inspector.view.r:
+    javax.swing.table.JTableHeader header -> a
+    sondas.client.inspector.view.SortButtonRenderer renderer -> b
+    sondas.client.inspector.view.SortableTable this$0 -> c
+    void mousePressed(java.awt.event.MouseEvent) -> mousePressed
+    void mouseReleased(java.awt.event.MouseEvent) -> mouseReleased
+sondas.client.inspector.view.SortableTableModel -> sondas.client.inspector.view.s:
+    int[] indexes -> a
+    sondas.client.inspector.view.TableSorter sorter -> b
+    java.lang.Class[] columTypes -> c
+    boolean isCellEditable(int,int) -> isCellEditable
+    java.lang.Class getColumnClass(int) -> getColumnClass
+    java.lang.Object getValueAt(int,int) -> getValueAt
+    void setValueAt(java.lang.Object,int,int) -> setValueAt
+    void sortByColumn(int,boolean) -> a
+    int[] getIndexes() -> a
+sondas.client.inspector.view.StatsTree -> sondas.client.inspector.view.StatsTree:
+    java.lang.String rootNodeTitle -> a
+    java.lang.Object[] hierarchy -> b
+    java.util.HashMap dictionary -> c
+    void doMouseClicked(java.awt.event.MouseEvent) -> a
+    javax.swing.tree.DefaultMutableTreeNode processHierarchy(sondas.client.inspector.model.StatsTreeData[],java.util.Map) -> a
+    void addOrderedChild(javax.swing.tree.DefaultMutableTreeNode,javax.swing.tree.DefaultMutableTreeNode) -> a
+    java.lang.String[] tokenize(java.lang.String) -> a
+    javax.swing.tree.DefaultMutableTreeNode processHierarchy(java.lang.Object[]) -> a
+    void access$0(sondas.client.inspector.view.StatsTree,java.awt.event.MouseEvent) -> a
+sondas.client.inspector.view.StatsTree$1 -> sondas.client.inspector.view.t:
+    sondas.client.inspector.view.StatsTree this$0 -> a
+    void mouseClicked(java.awt.event.MouseEvent) -> mouseClicked
+sondas.client.inspector.view.TableData -> sondas.client.inspector.view.TableData:
+    int cols -> a
+    java.util.ArrayList rows -> b
+    java.util.ArrayList rowKeys -> c
+    java.util.List getRowKeys() -> a
+    void addRow(int,java.lang.Object[]) -> a
+    java.lang.Object[][] getData() -> b
+sondas.client.inspector.view.TableSorter -> sondas.client.inspector.view.u:
+    sondas.client.inspector.view.SortableTableModel model -> a
+    void sort(int,boolean) -> a
+    int compare(int,int,int) -> a
+    int compare(java.lang.Number,java.lang.Number) -> a
+    int compare(java.util.Date,java.util.Date) -> a
+    int compare(java.lang.Boolean,java.lang.Boolean) -> a
+sondas.client.inspector.view.TimeGraphicPanel -> sondas.client.inspector.view.TimeGraphicPanel:
+    org.jfree.data.time.TimeSeries[] series -> a
+    java.lang.String title -> b
+    java.lang.String xTitle -> c
+    java.lang.String yTitle -> d
+    java.lang.String format -> e
+    java.awt.Font titleFont -> f
+    void setPoint(int,long,float) -> a
+    void setSerie(int,long[],float[]) -> a
+    void generate() -> b
+    void clear() -> a
+    void main(java.lang.String[]) -> main
+sondas.client.inspector.view.TimeRangePanel -> sondas.client.inspector.view.v:
+    com.jidesoft.swing.RangeSlider _rangeSlider -> a
+    long minTs -> d
+    long maxTs -> e
+    long iniTs -> f
+    long endTs -> g
+    java.text.SimpleDateFormat sdf -> h
+    javax.swing.JTextField minField -> b
+    javax.swing.JTextField maxField -> c
+    int amplitude -> i
+    sondas.client.inspector.view.IClientEvents client -> j
+    boolean isEnabled -> k
+    long getIniTs() -> a
+    long getEndTs() -> b
+    long getMinTs() -> c
+    long getMaxTs() -> d
+    java.lang.String getDate(long) -> a
+    void regenLimits(int,int) -> a
+    void enable() -> enable
+    void disable() -> disable
+    void setLimits(long,long) -> a
+    boolean access$0(sondas.client.inspector.view.TimeRangePanel) -> a
+    sondas.client.inspector.view.IClientEvents access$1(sondas.client.inspector.view.TimeRangePanel) -> b
+    void access$2(sondas.client.inspector.view.TimeRangePanel,int,int) -> a
+sondas.client.inspector.view.TimeRangePanel$1 -> sondas.client.inspector.view.w:
+    sondas.client.inspector.view.TimeRangePanel this$0 -> a
+    void mouseReleased(java.awt.event.MouseEvent) -> mouseReleased
+sondas.client.inspector.view.TimeRangePanel$2 -> sondas.client.inspector.view.x:
+    sondas.client.inspector.view.TimeRangePanel this$0 -> a
+    void stateChanged(javax.swing.event.ChangeEvent) -> stateChanged
+sondas.client.inspector.view.TreeGraph -> sondas.client.inspector.view.TreeGraph:
+    com.mxgraph.layout.mxIGraphLayout layout -> a
+    java.util.Map toolTips -> b
+    java.awt.Container container -> c
+    java.util.Map getToolTipsMap() -> a
+    boolean isCellFoldable(java.lang.Object,boolean) -> isCellFoldable
+    java.lang.Object[] foldCells(boolean,boolean,java.lang.Object[]) -> foldCells
+    java.lang.Object[] foldCellsWithoutRepaint(boolean,boolean,java.lang.Object[]) -> a
+    java.lang.Object[] toggleSubtree(com.mxgraph.view.mxGraph,java.lang.Object,boolean) -> a
+    java.lang.String getToolTipForCell(java.lang.Object) -> getToolTipForCell
+    com.mxgraph.layout.mxIGraphLayout access$0(sondas.client.inspector.view.TreeGraph) -> a
+sondas.client.inspector.view.TreeGraph$1 -> sondas.client.inspector.view.y:
+    sondas.client.inspector.view.TreeGraph this$0 -> a
+    int getLevelDistance() -> getLevelDistance
+    int getNodeDistance() -> getNodeDistance
+    boolean isUseBoundingBox() -> isUseBoundingBox
+sondas.client.inspector.view.TreeGraph$2 -> sondas.client.inspector.view.z:
+    sondas.client.inspector.view.TreeGraph this$0 -> a
+    com.mxgraph.layout.mxIGraphLayout getLayout(java.lang.Object) -> getLayout
+sondas.client.inspector.view.TreeGraph$CellVisitor -> sondas.client.inspector.view.A:
+    java.util.List cells -> a
+    java.lang.Object cell -> b
+    com.mxgraph.view.mxGraph graph -> c
+    sondas.client.inspector.view.TreeGraph this$0 -> d
+    boolean visit(java.lang.Object,java.lang.Object) -> visit
+sondas.client.inspector.view.TreePanel -> sondas.client.inspector.view.TreePanel:
+    sondas.client.inspector.view.TreeGraph graph -> a
+    java.lang.Object graphParent -> b
+    java.util.HashMap nodeVertexs -> c
+    java.text.DecimalFormat dec -> d
+    int TimeThreshold -> e
+    java.util.HashMap globalStats -> f
+    java.util.HashMap styles -> g
+    java.util.Map toolTips -> h
+    java.util.ArrayList foldedNodes -> i
+    int foldTH -> j
+    java.awt.Container container -> k
+    void generateTree(java.util.Set) -> a
+    void drawGraph(java.util.Set) -> b
+    java.lang.Object drawNode(sondas.inspector.probes.delta.MethodNode) -> a
+sondas.client.inspector.view.TreePanel$1 -> sondas.client.inspector.view.B:
+    sondas.client.inspector.view.TreePanel this$0 -> a
+    com.mxgraph.swing.mxGraphComponent val$graphComponent -> b
+    void mouseWheelMoved(java.awt.event.MouseWheelEvent) -> mouseWheelMoved
+sondas.client.inspector.view.nodes.AxisProbeViewer -> sondas.client.inspector.view.nodes.AxisProbeViewer:
+    void addTypeName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> a
+    void addTier(java.lang.StringBuilder) -> a
+    void addName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> b
+    java.lang.String getToolTip(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean isTimeStatsVisible() -> a
+    float getMetricValue(java.lang.String,java.lang.String,sondas.inspector.delta.IGlobalStats) -> a
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map) -> a
+sondas.client.inspector.view.nodes.IProbeViewer -> sondas.client.inspector.view.nodes.IProbeViewer:
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map) -> a
+    boolean isTimeStatsVisible() -> a
+    float getMetricValue(java.lang.String,java.lang.String,sondas.inspector.delta.IGlobalStats) -> a
+sondas.client.inspector.view.nodes.MethodProbeViewer -> sondas.client.inspector.view.nodes.MethodProbeViewer:
+    java.util.Map methodNames -> a
+    java.lang.String getView(sondas.inspector.probes.delta.MethodNode) -> b
+    float getMetricValue(java.lang.String,java.lang.String,sondas.inspector.delta.IGlobalStats) -> a
+    void addCommonStatistics(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> c
+    void addName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> b
+    void addTypeName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> a
+    void addTier(java.lang.StringBuilder) -> a
+    java.lang.String getToolTip(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean isTimeStatsVisible() -> a
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map) -> a
+sondas.client.inspector.view.nodes.ServletCpuProbeViewer -> sondas.client.inspector.view.nodes.ServletCpuProbeViewer:
+    float getMetricValue(java.lang.String,java.lang.String,sondas.inspector.delta.IGlobalStats) -> a
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map) -> a
+    boolean isTimeStatsVisible() -> a
+sondas.client.inspector.view.nodes.ServletProbeViewer -> sondas.client.inspector.view.nodes.ServletProbeViewer:
+    void addTypeName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> a
+    void addTier(java.lang.StringBuilder) -> a
+    boolean isTimeStatsVisible() -> a
+sondas.client.inspector.view.nodes.SqlProbeViewer -> sondas.client.inspector.view.nodes.SqlProbeViewer:
+    float getMetricValue(java.lang.String,java.lang.String,sondas.inspector.delta.IGlobalStats) -> a
+    void addTypeName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder) -> a
+    void addTier(java.lang.StringBuilder) -> a
+    void addName(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder,java.util.Map) -> a
+    void generateToolTip(java.lang.String,java.util.Map,java.lang.StringBuilder) -> a
+    java.lang.String getToolTip(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean isTimeStatsVisible() -> a
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map,int) -> a
+    void registerTimedStats(sondas.inspector.delta.IGlobalStats,java.util.Map,java.util.Map) -> a
+    java.lang.String composeFullSql(java.lang.String) -> a
+sondas.dispatcher.AgentClientConnection -> sondas.dispatcher.AgentClientConnection:
+    java.io.BufferedReader clientIn -> c
+    java.io.BufferedWriter clientOutText -> d
+    java.io.OutputStream clientOutBin -> e
+    java.io.BufferedReader agentIn -> a
+    java.io.BufferedWriter agentOut -> b
+    java.util.Set agentsInUse -> f
+    java.net.Socket clientSocket -> g
+    java.net.Socket agentSocket -> h
+    java.lang.String agent -> i
+    int pid -> j
+    sondas.dispatcher.Dispatcher dispatcher -> k
+    java.lang.String agentHost -> l
+    int agentPort -> m
+    boolean connected -> n
+    void connectToAgent(java.lang.String,int) -> a
+    void doWork() -> a
+sondas.dispatcher.Dispatcher -> sondas.dispatcher.Dispatcher:
+    java.lang.String version -> a
+    sondas.Config cfg -> b
+    java.util.HashMap dispatchers -> c
+    java.net.ServerSocket serverSocket -> d
+    java.lang.String agentsList -> e
+    java.util.Set agentsInUse -> f
+    java.util.Map catDict -> g
+    java.util.Map methodNames -> h
+    java.net.Socket agent -> i
+    java.io.DataInputStream agentInputStream -> j
+    boolean exit -> k
+    java.lang.String agentHost -> l
+    int agentDataPort -> m
+    int agentMessagesPort -> n
+    java.lang.String agentName -> o
+    java.util.HashMap processors -> p
+    boolean connectedToAgent -> q
+    java.util.Map getMethodNames() -> a
+    java.lang.String getAgentName() -> b
+    boolean isConnectedToAgent() -> c
+    java.lang.String getAgentHost() -> d
+    int getAgentDataPort() -> e
+    int getAgentMessagesPort() -> f
+    void setupDispatcher() -> i
+    void createMessagesReceiver() -> j
+    void loadAgents(java.lang.String) -> a
+    java.util.Map getCategoriesDictionary() -> g
+    sondas.dispatcher.IProcessor getProcessor(int) -> a
+    void run() -> run
+    void manageAgentConnection() -> h
+    void loadProcessors() -> k
+    void defineProcessor(java.lang.String) -> b
+    void main(java.lang.String[]) -> main
+sondas.dispatcher.DispatcherClientThread -> sondas.dispatcher.DispatcherClientThread:
+    java.net.Socket clientSocket -> a
+    java.io.BufferedReader in -> b
+    java.io.BufferedWriter outText -> c
+    java.io.OutputStream outBin -> d
+    java.util.Set agentsInUse -> e
+    java.util.Map dispatchers -> f
+    java.lang.String agentsList -> g
+    void run() -> run
+sondas.dispatcher.DispatcherException -> sondas.dispatcher.DispatcherException:
+sondas.dispatcher.IProcessor -> sondas.dispatcher.IProcessor:
+    void execute(java.io.DataInputStream) -> a
+    void setWorkers(java.util.List) -> a
+sondas.dispatcher.RespBean -> sondas.dispatcher.RespBean:
+    int code -> a
+    java.lang.String msg -> b
+sondas.dispatcher.inspector.CapturesServer -> sondas.dispatcher.inspector.CapturesServer:
+    java.net.ServerSocket serverSocket -> a
+    void run() -> run
+sondas.dispatcher.inspector.CapturesServerInstance -> sondas.dispatcher.inspector.a:
+    java.net.Socket clientSocket -> a
+    byte[] buffer -> b
+    void run() -> run
+sondas.dispatcher.inspector.DeltaModeFileWorker -> sondas.dispatcher.inspector.DeltaModeFileWorker:
+    java.io.DataOutputStream dos -> a
+    sondas.inspector.StringsCache stringsCache -> b
+    int pid -> c
+    sondas.dispatcher.Dispatcher dispatcher -> d
+    java.lang.String path -> e
+    java.lang.String agentName -> f
+    byte[] buffer -> g
+    void setOutputFile(java.lang.String) -> a
+    void execute(sondas.inspector.delta.DeltaTree) -> a
+    void setCapture(java.lang.String) -> b
+    sondas.dispatcher.RespBean sendCommand(java.lang.String,java.io.BufferedWriter,java.io.OutputStream) -> a
+    java.lang.String access$0(sondas.dispatcher.inspector.DeltaModeFileWorker) -> a
+sondas.dispatcher.inspector.DeltaModeFileWorker$1 -> sondas.dispatcher.inspector.b:
+    sondas.dispatcher.inspector.DeltaModeFileWorker this$0 -> a
+    boolean accept(java.io.File,java.lang.String) -> accept
+sondas.dispatcher.inspector.DeltaModeInspectorProcessor -> sondas.dispatcher.inspector.DeltaModeInspectorProcessor:
+    java.util.List workers -> a
+    int deltaProbePid -> b
+    sondas.inspector.StringsCache stringsCache -> c
+    java.util.concurrent.LinkedBlockingQueue treesQueue -> d
+    void setWorkers(java.util.List) -> a
+    void execute(java.io.DataInputStream) -> a
+    sondas.dispatcher.RespBean sendCommand(java.lang.String,java.io.BufferedWriter,java.io.OutputStream) -> a
+    java.util.concurrent.LinkedBlockingQueue access$0(sondas.dispatcher.inspector.DeltaModeInspectorProcessor) -> a
+    java.util.List access$1(sondas.dispatcher.inspector.DeltaModeInspectorProcessor) -> b
+sondas.dispatcher.inspector.DeltaModeInspectorProcessor$1 -> sondas.dispatcher.inspector.c:
+    sondas.dispatcher.inspector.DeltaModeInspectorProcessor this$0 -> a
+    void run() -> run
+sondas.dispatcher.inspector.FullModeConsoleWorker -> sondas.dispatcher.inspector.FullModeConsoleWorker:
+    void execute(sondas.inspector.Stamp) -> a
+sondas.dispatcher.inspector.FullModeFileWorker -> sondas.dispatcher.inspector.FullModeFileWorker:
+    java.io.DataOutputStream dos -> a
+    sondas.dispatcher.Dispatcher dis -> b
+    java.io.DataOutputStream getOutput() -> a
+    void execute(sondas.inspector.Stamp) -> a
+sondas.dispatcher.inspector.FullModeInspectorProcessor -> sondas.dispatcher.inspector.FullModeInspectorProcessor:
+    java.util.List workers -> a
+    int fullProbePid -> b
+    void setWorkers(java.util.List) -> a
+    void execute(java.io.DataInputStream) -> a
+    sondas.inspector.ITrace getTrace(int,java.io.DataInputStream) -> a
+    int sendCommand(java.lang.String) -> a
+sondas.dispatcher.inspector.FullModeTextFileWorker -> sondas.dispatcher.inspector.FullModeTextFileWorker:
+    java.io.Writer output -> a
+    void execute(sondas.inspector.Stamp) -> a
+sondas.dispatcher.inspector.IDeltaNodeFactory -> sondas.dispatcher.inspector.IDeltaNodeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.dispatcher.inspector.IDeltaWorker -> sondas.dispatcher.inspector.IDeltaWorker:
+    void execute(sondas.inspector.delta.DeltaTree) -> a
+sondas.dispatcher.inspector.IFactory -> sondas.dispatcher.inspector.IFactory:
+    sondas.inspector.ITrace createTrace(java.io.DataInputStream) -> a
+sondas.dispatcher.inspector.IFullWorker -> sondas.dispatcher.inspector.IFullWorker:
+    void execute(sondas.inspector.Stamp) -> a
+sondas.dispatcher.inspector.IMessagesReceiver -> sondas.dispatcher.inspector.IMessagesReceiver:
+    sondas.dispatcher.RespBean sendCommand(java.lang.String,java.io.BufferedWriter,java.io.OutputStream) -> a
+sondas.inspector.Constants -> sondas.inspector.Constants:
+    int Start -> a
+    int End -> b
+    int Exception -> c
+    int NoCached -> d
+    int Cached -> e
+    int Null -> f
+sondas.inspector.ITrace -> sondas.inspector.ITrace:
+    java.lang.String getKey() -> a
+    java.lang.String getName() -> b
+    int getMode() -> c
+sondas.inspector.InspectorRuntime -> sondas.inspector.InspectorRuntime:
+    java.util.Map methodNames -> c
+    java.util.Map metricsTypes -> d
+    java.util.Map factories -> e
+    java.util.Map deltaNodeFactories -> f
+    java.util.Map threadStores -> g
+    sondas.inspector.InspectorRuntime instance -> h
+    java.util.ArrayList observedProbes -> i
+    java.util.ArrayList deltaTreeList -> j
+    int deltaTime -> k
+    java.lang.String deltaTreeKey -> l
+    sondas.Config config -> a
+    int sendingInterval -> m
+    int DefaultSendingInterval -> n
+    boolean isDeltaMode -> o
+    java.lang.Object deltaTreeLock -> b
+    sondas.inspector.InspectorRuntime$DeltaTreeSender deltaTreeSender -> p
+    sondas.inspector.InspectorRuntime getInstance() -> b
+    java.util.Map getMethodNames() -> c
+    void setMethodName(int,java.lang.String) -> a
+    void setMethodNames(java.util.Map) -> a
+    void init(boolean) -> a
+    int getDeltaTime() -> d
+    void registerDeltaTree(sondas.inspector.delta.DeltaTree,java.util.Map) -> a
+    void unregisterDeltaTree(sondas.inspector.delta.DeltaTree) -> a
+    void lockDeltaTrees(java.util.ArrayList) -> a
+    void unlockDeltaTrees(java.util.ArrayList) -> b
+    void signalTerminateSending() -> e
+    void sendDeltas(int,long) -> a
+    void configureInspector(java.lang.String) -> d
+    sondas.dispatcher.inspector.IDeltaNodeFactory getDeltaProbeFactory(int) -> b
+    int getMetricType(java.lang.String) -> a
+    int getFullProbeId() -> f
+    int getDeltaProbeId() -> g
+    sondas.dispatcher.inspector.IFactory getTraceFactory(int) -> c
+    java.lang.String getProperty(java.lang.String) -> b
+    java.lang.String getProperty(java.lang.String,java.lang.String) -> a
+    java.util.List getMultipleProperty(java.lang.String,java.lang.String) -> b
+    boolean hasProperty(java.lang.String,java.lang.String) -> c
+    int getPropertyAsInteger(java.lang.String) -> c
+    int getPropertyAsInteger(java.lang.String,int) -> a
+    int getPropertyAsInteger(java.lang.String,java.lang.String) -> d
+    int getPropertyAsInteger(java.lang.String,java.lang.String,int) -> a
+    void observeProbe(sondas.inspector.probes.IInspectorProbe) -> a
+    void setFullMode() -> h
+    void setDeltaMode() -> i
+    void setSlice(int) -> d
+    void startCapture() -> j
+    void stopCapture() -> k
+sondas.inspector.InspectorRuntime$DeltaTreeSender -> sondas.inspector.a:
+    int pid -> a
+    int resolution -> b
+    boolean exit -> c
+    boolean active -> d
+    sondas.inspector.InspectorRuntime this$0 -> e
+    void setResolution(int) -> a
+    void startSending(int) -> b
+    void stopSending() -> a
+    void run() -> run
+sondas.inspector.KeyValueBean -> sondas.inspector.KeyValueBean:
+    java.lang.String key -> a
+    java.lang.String value -> b
+sondas.inspector.MethodExecutionData -> sondas.inspector.MethodExecutionData:
+    boolean isEntryPoint -> a
+sondas.inspector.Stamp -> sondas.inspector.Stamp:
+    int tid -> a
+    long ts -> b
+    int metricType -> c
+    sondas.inspector.ITrace trace -> d
+    int probeId -> e
+    int nodeId -> f
+    void marshall(java.io.DataOutputStream) -> a
+    sondas.inspector.ITrace getTrace() -> a
+    int getNodeId() -> b
+    int getMetricType() -> c
+    int getProbeId() -> d
+    int getTid() -> e
+    long getTs() -> f
+sondas.inspector.StringsCache -> sondas.inspector.StringsCache:
+    java.util.HashMap methodIdRel -> a
+    java.util.HashMap idMethodRel -> b
+    int currentId -> c
+    int MaxSize -> d
+    void clear() -> a
+    int addString(java.lang.String) -> a
+    void addString(int,java.lang.String) -> a
+sondas.inspector.connectivity.DispatcherManager -> sondas.inspector.connectivity.DispatcherManager:
+    java.lang.String host -> a
+    int port -> b
+    java.net.Socket con -> c
+    java.io.BufferedWriter outText -> d
+    java.io.BufferedReader inText -> e
+    java.io.OutputStream outBin -> f
+    java.io.InputStream inBin -> g
+    boolean captureStarted -> h
+    java.lang.String agent -> i
+    boolean connected -> j
+    int capPort -> k
+    java.lang.String getAgent() -> a
+    void connect() -> b
+    void setAgent(java.lang.String) -> a
+    void unsetAgent() -> c
+    void disconnect() -> d
+    java.util.List getAgents() -> e
+    boolean existsCapture(java.lang.String) -> b
+    void checkState() -> i
+    void startCapture(java.lang.String,int) -> a
+    void stopCapture() -> f
+    java.util.List getCaptures() -> g
+    java.io.InputStream getCapture(java.lang.String) -> c
+    boolean isConnected() -> h
+    sondas.dispatcher.RespBean sendPartialCmd(java.lang.String) -> d
+    sondas.dispatcher.RespBean sendCmd(java.lang.String) -> e
+sondas.inspector.delta.BaseGlobalStats -> sondas.inspector.delta.BaseGlobalStats:
+    java.lang.String name -> a
+    java.lang.String typeName -> b
+    int id -> c
+    int metricType -> d
+    int categoryId -> e
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.lang.Object clone() -> clone
+    int getCategoryId() -> a
+    float getMetricValue(java.lang.String,java.lang.String) -> a
+    int getMetricType() -> b
+    int getId() -> c
+    java.lang.String getName(java.util.Map) -> a
+    java.lang.String getTypeName() -> d
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+sondas.inspector.delta.DeltaTree -> sondas.inspector.delta.DeltaTree:
+    long serialVersionUID -> b
+    java.lang.String sonda -> c
+    sondas.inspector.probes.delta.MethodNode currentNode -> d
+    sondas.inspector.probes.delta.MethodNode startNode -> e
+    long completionTs -> f
+    int entryPointLevel -> g
+    int recursivityLevel -> h
+    int maxRecursivityLevel -> i
+    sondas.utils.ReentrantLock mutex -> a
+    int tid -> j
+    boolean registered -> k
+    java.util.HashMap globalStatsMap -> l
+    sondas.inspector.probes.delta.MethodNode _treeCurrentNode -> m
+    boolean _treeCurrentNodeFound -> n
+    java.util.Map subtreesMap -> o
+    java.util.Map entryNodes -> p
+    java.io.DataOutputStream currentDos -> q
+    void composeSubtreeMap(java.util.Map) -> a
+    void composeSubtreeMap(sondas.inspector.probes.delta.MethodNode) -> a
+    sondas.inspector.delta.DeltaTree softCopyAndClear() -> a
+    void clear() -> b
+    boolean hasCompletedState() -> c
+    void setDeltaTimestamp(long) -> a
+    void setRegistered(boolean) -> a
+    boolean isRegistered() -> d
+    void setState(sondas.inspector.delta.DeltaTree) -> a
+    java.util.Map getGlobalMapCloned() -> e
+    java.util.Map getGlobalMap() -> f
+    void addGlobalStats(int,sondas.inspector.delta.IGlobalStats) -> a
+    int getTid() -> g
+    void initialize() -> l
+    int getRecursivityLevel() -> m
+    boolean isEmpty() -> h
+    int getEntryPointLevel() -> i
+    boolean hasChildNode(int) -> a
+    long getTimeStamp() -> j
+    sondas.inspector.probes.delta.MethodNode openNode(int,long) -> a
+    void openNode(sondas.inspector.probes.delta.MethodNode,long) -> a
+    sondas.inspector.delta.IGlobalStats getGlobalStats(int) -> b
+    void closeNode(int,long,int,boolean) -> a
+    void detach(sondas.inspector.probes.delta.MethodNode) -> b
+    void copy(sondas.inspector.delta.DeltaTree) -> e
+    void generateEntryNodes() -> k
+    void merge(sondas.inspector.delta.DeltaTree) -> b
+    void mergeNodes(sondas.inspector.probes.delta.MethodNode,sondas.inspector.probes.delta.MethodNode) -> a
+    void combine(sondas.inspector.delta.DeltaTree[]) -> a
+    void combineGlobal(sondas.inspector.delta.DeltaTree) -> f
+    void combine(sondas.inspector.delta.DeltaTree) -> c
+    void combine(sondas.inspector.probes.delta.MethodNode,sondas.inspector.probes.delta.MethodNode) -> b
+    boolean isEquivalent(sondas.inspector.delta.DeltaTree) -> d
+    boolean areEquivalentNodes(sondas.inspector.probes.delta.MethodNode,sondas.inspector.probes.delta.MethodNode) -> c
+    java.lang.String toString(java.util.Map) -> b
+    void writeNodeAndChildren(sondas.inspector.probes.delta.MethodNode,java.lang.StringBuilder,java.lang.StringBuilder,java.util.Map) -> a
+    void marshallComposed(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.DeltaTree unmarshallComposed(java.io.DataInputStream,sondas.inspector.StringsCache) -> a
+    void marshall(int,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.probes.delta.MethodNode unmarshallNode(java.io.DataInputStream,sondas.inspector.StringsCache) -> b
+    sondas.inspector.probes.delta.MethodNode getRootNode() -> n
+    void marshallNode(sondas.inspector.probes.delta.MethodNode,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+sondas.inspector.delta.IDeltaMarshable -> sondas.inspector.delta.IDeltaMarshable:
+    void marshall(int,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+sondas.inspector.delta.IGlobalStats -> sondas.inspector.delta.IGlobalStats:
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+    int getId() -> c
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    java.lang.String getName(java.util.Map) -> a
+    java.lang.String getTypeName() -> d
+    int getMetricType() -> b
+    int getCategoryId() -> a
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.lang.Object clone() -> clone
+sondas.inspector.delta.IRemote -> sondas.inspector.delta.IRemote:
+sondas.inspector.delta.SimpleGlobalStats -> sondas.inspector.delta.SimpleGlobalStats:
+    int accExTime -> a
+    int accTotTime -> b
+    int invCount -> c
+    int errorCount -> d
+    int maxTotTime -> e
+    int maxExTime -> f
+    int minTotTime -> g
+    int minExTime -> h
+    java.lang.String name -> i
+    java.lang.String typeName -> j
+    int id -> k
+    int metricType -> l
+    int categoryId -> m
+    void addSubtree(sondas.inspector.probes.delta.MethodNode) -> a
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.lang.Object clone() -> clone
+    int getCategoryId() -> a
+    float getMetricValue(java.lang.String) -> a
+    int getMetricType() -> b
+    int getId() -> c
+    java.lang.String getName(java.util.Map) -> a
+    java.lang.String getTypeName() -> d
+    float getAvgTotTime() -> e
+    float getAvgExTime() -> f
+    int getInvCount() -> g
+    int getErrorCount() -> h
+    int getMinTotTime() -> i
+    int getMinExTime() -> j
+    int getMaxTotTime() -> k
+    int getMaxExTime() -> l
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    void updateBasic(int,int,boolean) -> a
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+sondas.inspector.delta.SimpleStats -> sondas.inspector.delta.SimpleStats:
+    sondas.utils.IUnmarshaller unmarshaller -> a
+    int accExTime -> b
+    int accTotTime -> c
+    int invCount -> d
+    int errorCount -> e
+    int maxTotTime -> f
+    int maxExTime -> g
+    int minTotTime -> h
+    int minExTime -> i
+    float getAvgTotTime() -> a
+    float getAvgExTime() -> b
+    int getInvCount() -> c
+    int getErrorCount() -> d
+    int getMinTotTime() -> e
+    int getMinExTime() -> f
+    int getMaxTotTime() -> g
+    int getMaxExTime() -> h
+    sondas.utils.IUnmarshaller getUnmarshaller() -> i
+    java.lang.Object clone() -> clone
+    void update(int,int,boolean) -> a
+    void merge(sondas.inspector.delta.SimpleStats) -> a
+    boolean isEquivalent(sondas.inspector.delta.SimpleStats) -> b
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.SimpleStats getDiferential(sondas.inspector.delta.SimpleStats) -> c
+sondas.inspector.delta.SimpleStatsUnmarshaller -> sondas.inspector.delta.a:
+    java.lang.Object unmarshall(java.io.DataInputStream,sondas.inspector.StringsCache) -> a
+sondas.inspector.probes.AxisExData -> sondas.inspector.probes.a:
+    boolean isInvocation -> a
+sondas.inspector.probes.AxisProbe -> sondas.inspector.probes.AxisProbe:
+    int AxisId -> b
+    java.util.WeakHashMap callEndPointRel -> i
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    void endMethodInternal(int,java.lang.Object,java.lang.Object,boolean) -> a
+    java.lang.String getCanonicalUrl(java.net.URL) -> a
+sondas.inspector.probes.ExData -> sondas.inspector.probes.b:
+    java.lang.String sql -> a
+    int type -> b
+    boolean isConnection -> c
+sondas.inspector.probes.ExecutionData -> sondas.inspector.probes.c:
+    long iniTs -> a
+    long iniCpu -> b
+    java.lang.String request -> c
+    long threadId -> d
+sondas.inspector.probes.IInspectorProbe -> sondas.inspector.probes.IInspectorProbe:
+    void startCapture() -> a_
+    void stopCapture() -> b
+    void setFullMode() -> c
+    void setDeltaMode() -> d
+sondas.inspector.probes.InspectorBaseProbe -> sondas.inspector.probes.InspectorBaseProbe:
+    int fullProbeId -> c
+    int deltaProbeId -> d
+    boolean fullMode -> e
+    boolean capturing -> f
+    java.lang.String deltaTreeKey -> g
+    int metricType -> h
+    void init() -> init
+    void startCapture() -> a_
+    void stopCapture() -> b
+    void setFullMode() -> c
+    void setDeltaMode() -> d
+    sondas.inspector.delta.DeltaTree getThreadDeltaTree(int) -> a
+    void releaseDeltaTree(sondas.inspector.delta.DeltaTree) -> a
+sondas.inspector.probes.MethodProbe -> sondas.inspector.probes.MethodProbe:
+    java.util.HashSet entryPoints -> b
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    java.lang.Object startMethodDebug(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object,long,int) -> a
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    void endMethodDebug(int,java.lang.Object,java.lang.Object,long) -> a
+    void exceptionMethodDebug(int,java.lang.Object,long) -> a
+    void endMethodInternal(int,java.lang.Object,java.lang.Object,boolean) -> a
+    void endMethodInternalDebug(int,java.lang.Object,java.lang.Object,boolean,long) -> a
+sondas.inspector.probes.ServletCpuProbe -> sondas.inspector.probes.ServletCpuProbe:
+    int CpuId -> b
+    int MaxParams -> i
+    boolean enabled -> j
+    java.lang.management.ThreadMXBean mxBean -> k
+    int paramsCount -> l
+    java.lang.String[] paramsList -> m
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    void endMethodInternal(int,java.lang.Object,java.lang.Object,boolean) -> a
+sondas.inspector.probes.ServletProbe -> sondas.inspector.probes.ServletProbe:
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    java.lang.Object startMethodDebug(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object,long,int) -> a
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    void endMethodDebug(int,java.lang.Object,java.lang.Object,long) -> a
+    void exceptionMethodDebug(int,java.lang.Object,long) -> a
+    void endMethodInternal(int,java.lang.Object,java.lang.Object,boolean) -> a
+    void endMethodInternalDebug(int,java.lang.Object,java.lang.Object,boolean,long) -> a
+sondas.inspector.probes.SqlProbe -> sondas.inspector.probes.SqlProbe:
+    int PstmtExecuteId -> b
+    int StmtExecuteId -> i
+    java.lang.Object startMethod(int,java.lang.String,java.lang.String,java.lang.String,int,java.lang.Object[],java.lang.Object[],java.lang.Object) -> startMethod
+    java.lang.Object startMethodDebug(int,java.lang.String,java.lang.String,java.lang.String,java.lang.Object[],java.lang.Object[],java.lang.Object,long) -> a
+    void endMethod(int,java.lang.Object,java.lang.Object) -> endMethod
+    void exceptionMethod(int,java.lang.Object) -> exceptionMethod
+    void endMethodDebug(int,java.lang.Object,java.lang.Object,long) -> a
+    void exceptionMethodDebug(int,java.lang.Object,long) -> a
+    void endMethodInternal(int,java.lang.Object,java.lang.Object,boolean) -> a
+    void endMethodInternalDebug(int,java.lang.Object,java.lang.Object,boolean,long) -> a
+sondas.inspector.probes.delta.AxisGlobalStats -> sondas.inspector.probes.delta.AxisGlobalStats:
+    java.util.Map endPoints -> a
+    float getMetricValue(java.lang.String,java.lang.String) -> a
+    java.lang.Object clone() -> clone
+    void getDiferential(java.util.Map,java.util.Map,java.util.Map) -> a
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.util.Map getEndPoints() -> m
+    void updateAxis(java.lang.String,int,int,boolean) -> a
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+sondas.inspector.probes.delta.AxisNode -> sondas.inspector.probes.delta.AxisNode:
+    java.util.Map endPoints -> f
+    java.lang.String currentEndPoint -> g
+    java.util.Map getEndPoints() -> a
+    void marshallIntrinsic(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(int) -> a
+    void setCurrentEndPoint(java.lang.String) -> a
+    void updateAxis(int,int,boolean,sondas.inspector.delta.IGlobalStats) -> a
+    void specificClose(int,int,int,boolean,java.util.Map) -> a
+    void internalMerge(sondas.inspector.probes.delta.AxisNode) -> a
+    void merge(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean combine(sondas.inspector.probes.delta.MethodNode,java.util.Map) -> a
+    boolean isEquivalent(sondas.inspector.probes.delta.MethodNode) -> b
+    boolean areEquivalentQueries(java.util.Map,java.util.Map) -> a
+sondas.inspector.probes.delta.AxisProbeFactory -> sondas.inspector.probes.delta.AxisProbeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.inspector.probes.delta.CpuGlobalStats -> sondas.inspector.probes.delta.CpuGlobalStats:
+    java.util.Map cpuPerEntry -> a
+    java.util.Set getEntryNames() -> e
+    void updateCpu(java.lang.String,long,long,long,long) -> a
+    float getMetricValue(java.lang.String,java.lang.String) -> a
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.lang.Object clone() -> clone
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+sondas.inspector.probes.delta.CpuStats -> sondas.inspector.probes.delta.a:
+    float accCpu -> a
+    int count -> b
+    void merge(sondas.inspector.probes.delta.CpuStats) -> a
+    float getValue() -> a
+    void update(float) -> a
+    sondas.inspector.probes.delta.CpuStats clone() -> b
+    sondas.inspector.probes.delta.CpuStats getDiferential(sondas.inspector.probes.delta.CpuStats) -> b
+    java.lang.Object clone() -> clone
+sondas.inspector.probes.delta.MethodNode -> sondas.inspector.probes.delta.MethodNode:
+    sondas.inspector.probes.delta.MethodNode parent -> f
+    java.util.HashMap children -> a
+    int id -> b
+    java.lang.String name -> c
+    int metricType -> d
+    long closingTs -> g
+    int closingMode -> h
+    int closingNodeId -> i
+    long openingTs -> j
+    int partialExTime -> k
+    long iniTs -> l
+    long partialIniTs -> m
+    int accExTime -> n
+    int accTotTime -> o
+    int invCount -> p
+    int errorCount -> q
+    int maxTotTime -> r
+    int maxExTime -> s
+    int minTotTime -> t
+    int minExTime -> u
+    boolean isEntryPoint -> e
+    int getMetricType() -> b
+    java.util.Collection getChildren() -> c
+    boolean hasParent() -> d
+    boolean hasDefinedId() -> e
+    boolean hasDefinedParent() -> f
+    sondas.inspector.probes.delta.MethodNode createUndefinedNode() -> g
+    int getId() -> h
+    java.lang.String getName(java.util.Map) -> a
+    java.lang.String getDigestedName(java.util.Map) -> b
+    java.lang.String getMethodClassAndName(java.util.Map) -> c
+    boolean hasChild(int) -> b
+    sondas.inspector.probes.delta.MethodNode getChild(int) -> c
+    int getChildrenCount() -> i
+    void addChild(sondas.inspector.probes.delta.MethodNode) -> c
+    long getOpeningTs() -> j
+    void startOpen(long) -> a
+    void openForCombine(sondas.inspector.probes.delta.MethodNode,long,boolean) -> a
+    void open(sondas.inspector.probes.delta.MethodNode,long) -> a
+    sondas.inspector.probes.delta.MethodNode open(int,long) -> a
+    void updateOpenStats(sondas.inspector.probes.delta.MethodNode,long) -> b
+    void close(int,long,int,java.util.Map) -> a
+    boolean isClosingNode() -> k
+    boolean isOpeningNode() -> l
+    void merge(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean combine(sondas.inspector.probes.delta.MethodNode,java.util.Map) -> a
+    void specificClose(int,int,int,boolean,java.util.Map) -> a
+    sondas.inspector.delta.IGlobalStats getGlobalStats(int,java.util.Map,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(int) -> a
+    void detach() -> m
+    sondas.inspector.probes.delta.MethodNode createUndefinedParent() -> n
+    sondas.inspector.probes.delta.MethodNode getParent() -> o
+    java.lang.String toString(java.util.Map) -> d
+    int getInvCount() -> p
+    int getErrorCount() -> q
+    float getAvgExTime() -> r
+    float getAvgTotTime() -> s
+    boolean isEquivalent(sondas.inspector.probes.delta.MethodNode) -> b
+    void marshallIntrinsic(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.probes.delta.MethodNode unmarshallIntrinsic(java.io.DataInputStream,sondas.inspector.StringsCache) -> a
+    java.lang.String getCsvStats() -> t
+    java.lang.String getStats() -> u
+sondas.inspector.probes.delta.MethodProbeFactory -> sondas.inspector.probes.delta.MethodProbeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.inspector.probes.delta.ServletCpuProbeFactory -> sondas.inspector.probes.delta.ServletCpuProbeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.inspector.probes.delta.ServletNode -> sondas.inspector.probes.delta.ServletNode:
+    void marshallIntrinsic(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(int) -> a
+sondas.inspector.probes.delta.ServletProbeFactory -> sondas.inspector.probes.delta.ServletProbeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.inspector.probes.delta.SqlGlobal -> sondas.inspector.probes.delta.SqlGlobal:
+    sondas.utils.ConcurrentHashMap pstmQueriesCache -> a
+    sondas.utils.ConcurrentHashMap pstmParamsCache -> b
+    void newPreparedStatement(java.lang.Object,java.lang.String) -> a
+    void setPreparedStatementParam(java.lang.Object,int,java.lang.Object) -> a
+    java.lang.String getPreparedStatementQuery(java.lang.Object) -> a
+    java.lang.Object[] getPreparedStatementParams(java.lang.Object) -> b
+    void removePreparedStatement(java.lang.Object) -> c
+sondas.inspector.probes.delta.SqlGlobalStats -> sondas.inspector.probes.delta.SqlGlobalStats:
+    java.util.Map pstmtQueries -> a
+    java.util.Map topPstmtQueries -> b
+    java.util.Map stmtQueries -> c
+    java.util.Map topStmtQueries -> d
+    float getMetricValue(java.lang.String,boolean,java.lang.String,int) -> a
+    float getMetricValue(java.lang.String,boolean,java.lang.String,java.util.Map,java.util.Map) -> a
+    java.lang.Object clone() -> clone
+    void getDiferential(java.util.Map,java.util.Map,java.util.Map) -> a
+    sondas.inspector.delta.IGlobalStats getDiferential(sondas.inspector.delta.IGlobalStats) -> a
+    java.util.Map getPstmtQueries() -> m
+    java.util.Map getTopPstmtQueries() -> n
+    java.util.Map getStmtQueries() -> o
+    java.util.Map getTopStmtQueries() -> p
+    void updateSql(java.lang.String,java.lang.String,int,int,boolean,int) -> a
+    void mergeQueries(java.util.Map,java.util.Map) -> a
+    void merge(sondas.inspector.delta.IGlobalStats) -> b
+    boolean isEquivalent(sondas.inspector.delta.IGlobalStats) -> c
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+sondas.inspector.probes.delta.SqlNode -> sondas.inspector.probes.delta.SqlNode:
+    int PreparedStatement -> f
+    int Statement -> g
+    java.lang.String currentSql -> h
+    java.lang.String currentFullSql -> i
+    int threshold -> j
+    int maxParamLength -> k
+    int maxQueriesCount -> l
+    int sqlType -> m
+    java.util.Map pstmtQueries -> n
+    java.util.Map topPstmtQueries -> o
+    java.util.Map stmtQueries -> p
+    java.util.Map topStmtQueries -> q
+    int getSqlType() -> a
+    java.util.Map getPstmtQueries() -> v
+    java.util.Map getTopPstmtQueries() -> w
+    java.util.Map getStmtQueries() -> x
+    java.util.Map getTopStmtQueries() -> y
+    void marshallIntrinsic(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(int) -> a
+    void setCurrentSql(java.lang.String,java.lang.Object[],int) -> a
+    void updateSql(int,int,boolean,sondas.inspector.delta.IGlobalStats) -> a
+    void specificClose(int,int,int,boolean,java.util.Map) -> a
+    void mergeQueries(java.util.Map,java.util.Map) -> a
+    void internalMerge(sondas.inspector.probes.delta.SqlNode) -> a
+    void merge(sondas.inspector.probes.delta.MethodNode) -> a
+    boolean combine(sondas.inspector.probes.delta.MethodNode,java.util.Map) -> a
+    boolean isEquivalent(sondas.inspector.probes.delta.MethodNode) -> b
+    boolean areEquivalentQueries(java.util.Map,java.util.Map) -> b
+sondas.inspector.probes.delta.SqlProbeFactory -> sondas.inspector.probes.delta.SqlProbeFactory:
+    sondas.inspector.probes.delta.MethodNode createNode(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> a
+    sondas.inspector.probes.delta.MethodNode createNode(sondas.inspector.ITrace,sondas.inspector.StringsCache,int,int) -> a
+    sondas.inspector.delta.IGlobalStats createGlobalStats(java.io.DataInputStream,sondas.inspector.StringsCache,int) -> b
+sondas.inspector.probes.full.MethodTrace -> sondas.inspector.probes.full.MethodTrace:
+    java.lang.String fqMethod -> b
+    int mode -> c
+    java.lang.String prefix -> d
+    java.io.DataOutputStream formerDos -> e
+    java.lang.ThreadLocal methodsCache -> a
+    void marshall(java.io.DataOutputStream) -> a
+    java.lang.String getKey() -> a
+    java.lang.String getName() -> b
+    int getMode() -> c
+sondas.inspector.probes.full.MethodTrace$1 -> sondas.inspector.probes.full.a:
+    java.lang.Object initialValue() -> initialValue
+sondas.inspector.probes.full.MethodsFactory -> sondas.inspector.probes.full.MethodsFactory:
+    java.util.HashMap methodsCache -> a
+    sondas.inspector.ITrace createTrace(java.io.DataInputStream) -> a
+sondas.inspector.probes.full.ServletTrace -> sondas.inspector.probes.full.ServletTrace:
+    java.lang.String request -> a
+    int mode -> b
+    java.lang.String prefix -> c
+    java.io.DataOutputStream formerDos -> d
+    java.lang.ThreadLocal requestsCache -> e
+    void marshall(java.io.DataOutputStream) -> a
+    java.lang.String getKey() -> a
+    java.lang.String getName() -> b
+    int getMode() -> c
+sondas.inspector.probes.full.ServletTrace$1 -> sondas.inspector.probes.full.b:
+    java.lang.Object initialValue() -> initialValue
+sondas.inspector.probes.full.ServletsFactory -> sondas.inspector.probes.full.ServletsFactory:
+    java.util.HashMap requestsCache -> a
+    sondas.inspector.ITrace createTrace(java.io.DataInputStream) -> a
+sondas.inspector.probes.full.SqlTrace -> sondas.inspector.probes.full.SqlTrace:
+    int threshold -> b
+    int maxParamLength -> c
+    java.lang.String prefix -> d
+    java.lang.String sql -> e
+    java.lang.String sqlParams -> f
+    void marshall(java.io.DataOutputStream) -> a
+sondas.inspector.probes.full.SqlsFactory -> sondas.inspector.probes.full.SqlsFactory:
+    sondas.inspector.ITrace createTrace(java.io.DataInputStream) -> a
+sondas.rt.AutoInstrument -> sondas.rt.AutoInstrument:
+    void premain(java.lang.String,java.lang.instrument.Instrumentation) -> premain
+sondas.rt.AutoInstrument$SondasClassLoader -> sondas.rt.AutoInstrument$SondasClassLoader:
+    byte[] transform(java.lang.ClassLoader,java.lang.String,java.lang.Class,java.security.ProtectionDomain,byte[]) -> transform
+sondas.rt.ClassLoaderSondasDump_JDK16 -> sondas.rt.ClassLoaderSondasDump_JDK16:
+    byte[] dump() -> a
+sondas.rt.ClassLoaderSondasDump_WAS51 -> sondas.rt.ClassLoaderSondasDump_WAS51:
+    byte[] dump() -> a
+sondas.utils.ConcurrentHashMap -> sondas.utils.ConcurrentHashMap:
+    sondas.utils.ConcurrentHashMap$Entry[] table -> a
+    int CONCURRENCY_LEVEL -> b
+    int SEGMENT_MASK -> c
+    sondas.utils.ConcurrentHashMap$Segment[] segments -> d
+    int DEFAULT_INITIAL_CAPACITY -> e
+    int MINIMUM_CAPACITY -> m
+    int MAXIMUM_CAPACITY -> n
+    float DEFAULT_LOAD_FACTOR -> f
+    float loadFactor -> g
+    int threshold -> h
+    int votesForResize -> i
+    java.util.Set keySet -> j
+    java.util.Set entrySet -> k
+    java.util.Collection values -> l
+    int bitcount(int) -> a
+    int p2capacity(int) -> c
+    int hash(java.lang.Object) -> a
+    boolean eq(java.lang.Object,java.lang.Object) -> a
+    sondas.utils.ConcurrentHashMap$Entry[] newTable(int) -> b
+    int size() -> size
+    boolean isEmpty() -> isEmpty
+    java.lang.Object get(java.lang.Object) -> get
+    boolean containsKey(java.lang.Object) -> containsKey
+    java.lang.Object put(java.lang.Object,java.lang.Object) -> put
+    void resize(int,sondas.utils.ConcurrentHashMap$Entry[]) -> a
+    void rehash() -> a
+    java.lang.Object remove(java.lang.Object) -> remove
+    java.lang.Object remove(java.lang.Object,java.lang.Object) -> b
+    boolean containsValue(java.lang.Object) -> containsValue
+    boolean contains(java.lang.Object) -> b
+    void putAll(java.util.Map) -> putAll
+    void clear() -> clear
+    java.lang.Object clone() -> clone
+    java.util.Set keySet() -> keySet
+    java.util.Collection values() -> values
+    java.util.Set entrySet() -> entrySet
+    java.util.Enumeration keys() -> b
+    java.util.Enumeration elements() -> c
+    void writeObject(java.io.ObjectOutputStream) -> a
+    void readObject(java.io.ObjectInputStream) -> a
+sondas.utils.ConcurrentHashMap$Entry -> sondas.utils.ConcurrentHashMap$Entry:
+    java.lang.Object key -> a
+    java.lang.Object value -> b
+    int hash -> c
+    sondas.utils.ConcurrentHashMap$Entry next -> d
+    java.lang.Object getKey() -> getKey
+    java.lang.Object getValue() -> getValue
+    java.lang.Object setValue(java.lang.Object) -> setValue
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    java.lang.String toString() -> toString
+sondas.utils.ConcurrentHashMap$EntrySet -> sondas.utils.a:
+    sondas.utils.ConcurrentHashMap this$0 -> a
+    java.util.Iterator iterator() -> iterator
+    boolean contains(java.lang.Object) -> contains
+    boolean remove(java.lang.Object) -> remove
+    int size() -> size
+    void clear() -> clear
+    java.lang.Object[] toArray() -> toArray
+    java.lang.Object[] toArray(java.lang.Object[]) -> toArray
+sondas.utils.ConcurrentHashMap$HashIterator -> sondas.utils.ConcurrentHashMap$HashIterator:
+    sondas.utils.ConcurrentHashMap$Entry[] tab -> a
+    int index -> b
+    sondas.utils.ConcurrentHashMap$Entry entry -> c
+    java.lang.Object currentKey -> d
+    java.lang.Object currentValue -> e
+    sondas.utils.ConcurrentHashMap$Entry lastReturned -> f
+    sondas.utils.ConcurrentHashMap this$0 -> g
+    boolean hasMoreElements() -> hasMoreElements
+    java.lang.Object nextElement() -> nextElement
+    boolean hasNext() -> hasNext
+    java.lang.Object returnValueOfNext() -> a
+    java.lang.Object next() -> next
+    void remove() -> remove
+sondas.utils.ConcurrentHashMap$KeyIterator -> sondas.utils.ConcurrentHashMap$KeyIterator:
+    sondas.utils.ConcurrentHashMap this$0 -> h
+    java.lang.Object returnValueOfNext() -> a
+sondas.utils.ConcurrentHashMap$KeySet -> sondas.utils.b:
+    sondas.utils.ConcurrentHashMap this$0 -> a
+    java.util.Iterator iterator() -> iterator
+    int size() -> size
+    boolean contains(java.lang.Object) -> contains
+    boolean remove(java.lang.Object) -> remove
+    void clear() -> clear
+    java.lang.Object[] toArray() -> toArray
+    java.lang.Object[] toArray(java.lang.Object[]) -> toArray
+sondas.utils.ConcurrentHashMap$Segment -> sondas.utils.ConcurrentHashMap$Segment:
+    int count -> a
+    int getCount() -> a
+    void synch() -> b
+sondas.utils.ConcurrentHashMap$ValueIterator -> sondas.utils.ConcurrentHashMap$ValueIterator:
+    sondas.utils.ConcurrentHashMap this$0 -> h
+    java.lang.Object returnValueOfNext() -> a
+sondas.utils.ConcurrentHashMap$Values -> sondas.utils.c:
+    sondas.utils.ConcurrentHashMap this$0 -> a
+    java.util.Iterator iterator() -> iterator
+    int size() -> size
+    boolean contains(java.lang.Object) -> contains
+    void clear() -> clear
+    java.lang.Object[] toArray() -> toArray
+    java.lang.Object[] toArray(java.lang.Object[]) -> toArray
+sondas.utils.DataSender -> sondas.utils.DataSender:
+    int ListenerThreadAction -> b
+    int DataPumperAction -> c
+    java.net.ServerSocket serverSocket -> d
+    java.net.Socket clientSocket -> e
+    java.io.DataOutputStream dos -> f
+    int interval -> g
+    int bufferSize -> h
+    boolean active -> i
+    boolean shutdown -> j
+    java.lang.Thread listenerThread -> k
+    java.lang.Thread pumperThread -> l
+    java.io.DataOutputStream debugFileOut -> m
+    sondas.utils.Mutex mutex -> a
+    int threadAction -> n
+    java.util.LinkedList listOfTreesToSend -> o
+    java.util.LinkedList listOfPidsToSend -> p
+    java.lang.ThreadLocal dataSenderBean -> q
+    java.lang.ThreadLocal signaledBuffer -> r
+    void startUp() -> a
+    boolean sendPeriodic(sondas.utils.IMarshable) -> a
+    void sendImmediate(sondas.utils.IMarshable) -> b
+    void flushChannel() -> b
+    void sendImmediate(int,sondas.inspector.delta.IDeltaMarshable) -> a
+    void sendImmediate(int,java.util.ArrayList) -> a
+    void sendBuffer(java.util.List) -> a
+    void sendBuffered(sondas.utils.IMarshable) -> c
+    void signalShutdown() -> c
+    void closeChannel() -> d
+    void listenerThread() -> f
+    void dataPumperThread() -> g
+    void sendToPumper(int,java.util.ArrayList) -> b
+    void run() -> run
+    int access$0() -> e
+sondas.utils.DataSender$1 -> sondas.utils.d:
+    java.lang.Object initialValue() -> initialValue
+sondas.utils.DataSender$2 -> sondas.utils.e:
+    java.lang.Object initialValue() -> initialValue
+sondas.utils.DataSenderBean -> sondas.utils.DataSenderBean:
+    long deadline -> a
+    int interval -> b
+    void updateDeadline(long) -> a
+sondas.utils.ICachedMarshable -> sondas.utils.ICachedMarshable:
+    void marshall(java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+sondas.utils.IMarshable -> sondas.utils.IMarshable:
+    void marshall(java.io.DataOutputStream) -> a
+sondas.utils.IUnmarshaller -> sondas.utils.IUnmarshaller:
+    java.lang.Object unmarshall(java.io.DataInputStream,sondas.inspector.StringsCache) -> a
+sondas.utils.Logger -> sondas.utils.Logger:
+    java.io.PrintWriter writer -> a
+    java.text.SimpleDateFormat sdf -> b
+    void write(java.lang.String) -> a
+sondas.utils.MultipleRelation -> sondas.utils.MultipleRelation:
+    java.util.HashMap map -> a
+    java.util.Set getKeys() -> a
+    boolean containsRelation(java.lang.Object,java.lang.Object) -> a
+    void addRelation(java.lang.Object,java.lang.Object) -> b
+    java.util.List getReferences(java.lang.Object) -> a
+    java.lang.Object getReference(java.lang.Object) -> b
+sondas.utils.Mutex -> sondas.utils.Mutex:
+    boolean inuse_ -> a
+    int count -> b
+    void acquire() -> a
+    void release() -> b
+    boolean attempt(long) -> a
+sondas.utils.Names -> sondas.utils.Names:
+    java.lang.String getDigestedName(java.lang.String,boolean) -> a
+    java.lang.String getClassAndMethod(java.lang.String) -> a
+    java.lang.String getDigestedParams(java.lang.String) -> b
+    java.lang.String digestType(java.lang.String) -> c
+sondas.utils.ReentrantLock -> sondas.utils.ReentrantLock:
+    java.lang.Thread owner_ -> a
+    long holds_ -> b
+    void acquire() -> a
+    boolean attempt(long) -> a
+    void release() -> b
+    void release(long) -> b
+    long holds() -> c
+sondas.utils.SignaledBuffer -> sondas.utils.SignaledBuffer:
+    java.util.ArrayList buffer -> a
+    boolean sendRequest -> b
+sondas.utils.SondasUtils -> sondas.utils.SondasUtils:
+    int readStringBuffersSize -> a
+    java.lang.ThreadLocal readStringBuffers -> b
+    void marshallStringKeyMap(java.util.Map,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    java.util.Map unmarshallStringKeyMap(java.io.DataInputStream,sondas.utils.IUnmarshaller,sondas.inspector.StringsCache) -> a
+    java.lang.String readString(java.io.DataInputStream) -> a
+    void writeString(java.lang.String,java.io.DataOutputStream) -> a
+    java.lang.String readCachedString(java.io.DataInputStream,sondas.inspector.StringsCache) -> a
+    void writeCachedString(java.lang.String,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    java.lang.Object newInstance(java.lang.String) -> a
+    java.lang.String getFqMethod(java.lang.String,java.lang.String,java.lang.String) -> a
+    java.lang.String getExtension(java.io.File) -> a
+    void writeHeader(java.util.Map,java.util.Map,java.io.DataOutputStream) -> a
+    void readHeader(java.util.Map,java.util.Map,java.io.DataInputStream) -> a
+    void writeMethodNames(java.util.Map,java.io.DataOutputStream) -> a
+    void readMethodNames(java.util.Map,java.io.DataInputStream) -> a
+    void writeCategories(java.util.Map,java.io.DataOutputStream) -> b
+    void readCategories(java.util.Map,java.io.DataInputStream) -> b
+    java.util.List parseCvsString(java.lang.String) -> b
+    void marshallStringList(java.util.List,java.io.DataOutputStream,sondas.inspector.StringsCache) -> a
+    java.util.List unmarshallStringList(java.io.DataInputStream,sondas.inspector.StringsCache) -> b
+    void marshallBooleanList(java.util.List,java.io.DataOutputStream) -> a
+    java.util.List unmarshallBooleanList(java.io.DataInputStream) -> b
+    void marshallIntegerList(java.util.List,java.io.DataOutputStream,sondas.inspector.StringsCache) -> b
+    java.util.List unmarshallIntegerList(java.io.DataInputStream,sondas.inspector.StringsCache) -> c
+    int access$0() -> a
+sondas.utils.SondasUtils$1 -> sondas.utils.f:
+    java.lang.Object initialValue() -> initialValue
+sondas.utils.Sync -> sondas.utils.Sync:
+    long ONE_SECOND -> c
+    long ONE_MINUTE -> d
+    long ONE_HOUR -> e
+    long ONE_DAY -> f
+    long ONE_WEEK -> g
+    long ONE_YEAR -> h
+    long ONE_CENTURY -> i
+    void acquire() -> a
+    boolean attempt(long) -> a
+    void release() -> b
+sondas.utils.TerminateSignal -> sondas.utils.TerminateSignal:
+    sondas.utils.TerminateSignal signal -> a
+    void marshall(java.io.DataOutputStream) -> a
+sondas.utils.Tracer -> sondas.utils.Tracer:
+    java.lang.String outFile -> a
+    boolean isBinary -> b
+    java.util.Hashtable methods -> c
+    java.lang.Object lock -> d
+    boolean active -> e
+    void trace(java.lang.String,java.lang.String,java.lang.String) -> a
+    void trace(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    void traceBinary(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> b
+    void writeString(java.lang.String,java.io.DataOutputStream) -> a
+    void traceText(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> c

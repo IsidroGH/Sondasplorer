@@ -1,0 +1,20 @@
+AxisProbe
+	extends InspectorBaseProbe
+	setMethodToInstrumentalize("setTargetEndpointAddress","Ljava/net/URL;");
+	setMethodToInstrumentalize("invoke","");
+
+AxisNode
+
+AxisGlobalStats
+	getMetricValue (WebService|Machine:Port|Service)
+	Aqui es donde se definen las metricas que son visibles 
+		if (statsName.equals("totTime")) {
+				resp = stats.getAvgTotTime();
+		}
+
+AxisProbeFactory
+
+AxisProbeViewer
+
+
+

@@ -1,0 +1,11 @@
+* En el árbol de metodos, tengo que hacer que cuando por defecto aparezca el nodo principal colapsado, cuando se expanda, sólo se expanda los que superan el umbral. Ahora se expande todo
+* Estudiar como quitar el borde del grafo arbol
+* Poner opción de preferencias
+* Poner un control de zoom más usable (el boton del raton es incomodo)
+
+* 2011/03/12 En MethodProbeViewer habia un error:
+
+	protected void addName(MethodNode node, StringBuilder sb) {
+		//sb.append(node.getDigestedName()).append("\n");
+		sb.append(node.getMethodName()).append("\n"); <-- No existia. He creado ese metodo que devuelve el nombre FQ sin los parametrod
+	}

@@ -1,0 +1,26 @@
+Critico
+	Documentar
+	
+	A veces se produce esta excepcion: Revisar si está todo correcto
+		
+		MethodExecutionData exData = (MethodExecutionData) getExecutionData(executionId);
+		
+		Exception in thread "Thread-4" java.lang.NullPointerException
+		at sondas.inspector.probes.MethodProbe.endMethodInternal(MethodProbe.java:180)
+		at sondas.inspector.probes.MethodProbe.endMethod(MethodProbe.java:131)
+		at sondas.inspector.test.InspectorTest$DeltaTreeEx.ex_pstmt_rapido(InspectorTest.java:313)
+		at sondas.inspector.test.InspectorTest$DeltaTreeEx.run(InspectorTest.java:124)
+	
+Alto
+	SqlProbe implementar Statements
+	El interpolador genera muestras > 100 en el caso de métricas % (Interpolator.process en MainFrame)
+	
+Medio
+	Dispatcher: desacoplar el agente de los workers mediante una cola finita
+		
+Bajo
+	Implementar las métricas de EJB en base a EJBSession (igual que Introscope)
+	Implementar el consumo de CPU por peticion
+	Permitir, si es necesario, instrumentalizar con el mismo tipo de sonda pero en distintas categorias los mismos métodos
+	Permitir recarga de clases en tiempo real mediante JDK 1.5
+
