@@ -15,6 +15,18 @@ Sql probe: It let us to analyze the Sql sentences that are being executed as Sta
 
 These three probes types generate statistical information about the number of invocations, total time, exclusive time, maximum time, minimum time and the error count.
 
+In Sondasplorer framework a probe is a Java class designed to assess and/or modify any parameter in runtime. For example we can:
+
+Assess methods total execution time
+Assess methods exclusive execution time
+Assess execution errors
+Investigate methods calling parameters
+Assess methods invocation count
+Generate a performance execution tree
+Detect memory leaks
+Alter existing classes funcionality in a transparent way
+Do whatever your imagination can create 
+
 Full description
 ================
 
